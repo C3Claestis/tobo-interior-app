@@ -46,8 +46,7 @@ class HomePage extends StatelessWidget {
                     "Akhirnya",
                     "GG Gaming",
                     Random().nextInt(1000),
-                  );
-                  print(provider.data);
+                  );                  
                 },
                 child: Text('Fetch Random Image'),
               ),

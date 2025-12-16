@@ -13,24 +13,11 @@ class ProfileProv extends ChangeNotifier {
 
     final response = await http.post(
       url,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: jsonEncode({
-        "title": title,
-        "body": isi,
-        "userId": id,
-      }),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"title": title, "body": isi, "userId": id}),
     );
 
-    print("STATUS: ${response.statusCode}");
-    print("BODY: ${response.body}");
-
-    if (response.statusCode == 201) {
-      _data = json.decode(response.body);
-      notifyListeners();
-    } else {
-      print("Error");
-    }
+    _data = json.decode(response.body);
+    notifyListeners();
   }
 }
