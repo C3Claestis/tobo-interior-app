@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:tobo_apk/base/responsive_page.dart';
+import 'package:gap/gap.dart';
+
+class Splashscreen extends StatelessWidget {
+  const Splashscreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ResponsivePage(
+      headerPercent: 0.25,
+      bodyPercent: 0.50,
+      footerPercent: 0.25,
+
+      header: Container(color: Colors.amber),
+      body: Center(
+        child: Container(
+          color: Colors.blue,
+          padding: EdgeInsets.all(16),
+          width: double.infinity,
+          height: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("BODY CONTENT"),
+              Gap(16),            
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
