@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tobo_apk/base/responsive_page.dart';
 import 'package:gap/gap.dart';
+import '../provider/splashscreen_prov.dart';
 
 class Splashscreen extends StatelessWidget {
   const Splashscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<SplashscreenProv>().startTimer(context);
+    });
+
     return ResponsivePage(
       headerPercent: 0.25,
       bodyPercent: 0.50,
@@ -21,10 +27,7 @@ class Splashscreen extends StatelessWidget {
           height: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("BODY CONTENT"),
-              Gap(16),            
-            ],
+            children: [Text("Splash Screen"), Gap(16)],
           ),
         ),
       ),

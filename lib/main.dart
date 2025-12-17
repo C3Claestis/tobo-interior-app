@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:tobo_apk/page/splashscreen.dart';
-import 'package:tobo_apk/provider/profile_prov.dart';
-import 'package:tobo_apk/page/home_page.dart';
+import '../page/splashscreen.dart';
+import '../page/home_page.dart';
+import '../provider/profile_prov.dart';
+import '../provider/splashscreen_prov.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,10 @@ void main() async {
 
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => ProfileProv())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => ProfileProv()),
+        ChangeNotifierProvider(create: (_) => SplashscreenProv()),
+      ],
       child: const MyApp(),
     ),
   );
