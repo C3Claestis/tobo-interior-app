@@ -20,7 +20,7 @@ class HomeHeroWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _heroBanner(context, prov),
-            const Gap(17),
+            // const Gap(8),
             _indicator(prov),
           ],
         );
@@ -30,7 +30,7 @@ class HomeHeroWidget extends StatelessWidget {
 
   SizedBox _heroBanner(BuildContext context, HomeHeroProv prov) {
     return SizedBox(
-      height: 160,
+      height: 180,
       width: double.infinity,
       child: NotificationListener<ScrollNotification>(
         onNotification: (_) {
@@ -38,6 +38,10 @@ class HomeHeroWidget extends StatelessWidget {
           return false;
         },
         child: ListView.separated(
+          padding: const EdgeInsets.only(
+            bottom: 16, // 🔥 ruang shadow bawah
+            right: 16,
+          ),
           controller: prov.scrollController,
           scrollDirection: Axis.horizontal,
           itemCount: prov.banners.length,
@@ -49,6 +53,7 @@ class HomeHeroWidget extends StatelessWidget {
               width: 290,
               height: 160,
               child: Stack(
+                clipBehavior: Clip.none,
                 children: [
                   _backgroundImage(banner.image),
                   _gradientOverlay(),
@@ -65,6 +70,13 @@ class HomeHeroWidget extends StatelessWidget {
   Widget _backgroundImage(String image) {
     return Container(
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.25),
+            blurRadius: 8,
+            offset: const Offset(6, 6), // 👉 kanan & bawah
+          ),
+        ],
         borderRadius: BorderRadius.circular(16),
         image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
       ),
@@ -116,12 +128,14 @@ class HomeHeroWidget extends StatelessWidget {
             children: [
               _actionButton(
                 context,
+                position: 'left',
                 icon: 'assets/svgs/sofa.svg',
                 text: banner.buttonTextLeft,
                 onTap: () => context.read<HomeHeroProv>().onBannerTap(index),
               ),
               _actionButton(
                 context,
+                position: 'right',
                 icon: 'assets/svgs/konstruksi.svg',
                 text: banner.buttonTextRight,
                 onTap: () => context.read<HomeHeroProv>().onBannerTap(index),
@@ -135,6 +149,7 @@ class HomeHeroWidget extends StatelessWidget {
 
   Widget _actionButton(
     BuildContext context, {
+    required String position,
     required String icon,
     required String text,
     required VoidCallback onTap,
@@ -154,7 +169,17 @@ class HomeHeroWidget extends StatelessWidget {
           ),
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.softWood,
+          backgroundColor: (position == 'left')
+              ? AppColors.softWood
+              : Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+            side: BorderSide(
+              color: (position == 'left')
+                  ? AppColors.softWood
+                  : AppColors.pureWhite,
+            ),
+          ),
           foregroundColor: AppColors.pureWhite,
         ),
       ),
