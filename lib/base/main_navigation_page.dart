@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../page/home_page.dart';
 import '../provider/main_navigation_prov.dart';
+import '../page/home_page.dart';
 import '../widget/bottom_navbar_widget.dart';
 
 class MainNavigationPage extends StatelessWidget {

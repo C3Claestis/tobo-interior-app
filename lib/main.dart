@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'provider/main_navigation_prov.dart';
-import '../page/home_page.dart';
 import '../base/main_navigation_page.dart';
+import '../page/home_page.dart';
 import '../provider/product_prov.dart';
 import '../page/splashscreen.dart';
 import '../provider/profile_prov.dart';
@@ -22,7 +22,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => ProfileProv()),
         ChangeNotifierProvider(create: (_) => SplashscreenProv()),
-        ChangeNotifierProvider(create: (_) => MainNavigationProvider()),
+        ChangeNotifierProvider(create: (_) => MainNavigationProvider()),        
         ChangeNotifierProvider(create: (_) => ProductProv()..fetchProducts()),
       ],
       child: const MyApp(),

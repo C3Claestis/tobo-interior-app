@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../theme/appcolor.dart';
 
 class NavBar extends StatelessWidget {
   final int currentIndex;
@@ -34,7 +35,7 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _navItem(0, 'assets/svgs/home.svg', 'Home'),
+          _navItem(0, 'assets/svgs/home.svg', 'Home'),        
           _navItem(1, 'assets/svgs/jasa.svg', 'Jasa'),
           _navItem(2, 'assets/svgs/katalog.svg', 'Katalog'),
           _navItem(3, 'assets/svgs/proyek.svg', 'Proyek'),
@@ -57,7 +58,7 @@ class NavBar extends StatelessWidget {
             height: 26,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                isActive ? Color(0xFFD4A977) : Colors.black,
+                isActive ? AppColors.softWood : AppColors.black,
                 BlendMode.srcIn,
               ),
               child: SvgPicture.asset(iconPath),
@@ -69,7 +70,7 @@ class NavBar extends StatelessWidget {
               label,
               style: TextStyle(
                 fontSize: 10,
-                color: isActive ? Color(0xFFD4A977) : Colors.black,
+                color: isActive ? AppColors.softWood : AppColors.black,
                 fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
               ),
             ),
