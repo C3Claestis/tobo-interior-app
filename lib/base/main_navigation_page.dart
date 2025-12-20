@@ -6,7 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/jasa_page.dart';
-import 'package:tobo_apk/provider/jasa/toggle_text_prov.dart';
+import 'package:tobo_apk/provider/jasa/jasa_content_prov.dart';
 import 'package:tobo_apk/theme/appcolor.dart';
 import '../provider/main_navigation_prov.dart';
 import '../page/home_page.dart';
@@ -115,42 +115,49 @@ class MainNavigationPage extends StatelessWidget {
   }
 
   Widget _textTab(BuildContext context, String text, int index) {
-    final prov = context.watch<ToggleTextProv>();
-    final isActive = prov.selectedIndex == index;
+  return Expanded(
+    child: Consumer<JasaContentProv>(
+      builder: (context, jasaProv, _) {
+        final isActive = jasaProv.selectedTab == index;
 
-    return Expanded(
-      child: TextButton(
-        onPressed: () => context.read<ToggleTextProv>().select(index),
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.zero,
-          overlayColor: Colors.transparent,
-          splashFactory: NoSplash.splashFactory,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              text,
-              style: GoogleFonts.poppins(
-                fontSize: 14,
-                fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-                color: isActive ? AppColors.softWood : AppColors.black,
+        return TextButton(
+          onPressed: () => jasaProv.changeTab(index),
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            overlayColor: Colors.transparent,
+            splashFactory: NoSplash.splashFactory,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                text,
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  fontWeight:
+                      isActive ? FontWeight.bold : FontWeight.normal,
+                  color: isActive
+                      ? AppColors.softWood
+                      : AppColors.black,
+                ),
               ),
-            ),
-            const Gap(6),
-            LayoutBuilder(
-              builder: (context, constraints) => AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                height: 3,
-                width: isActive ? constraints.maxWidth : 0,
-                color: AppColors.softWood,
+              const Gap(6),
+              LayoutBuilder(
+                builder: (context, constraints) => AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  height: 3,
+                  width: isActive ? constraints.maxWidth : 0,
+                  color: AppColors.softWood,
+                ),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+            ],
+          ),
+        );
+      },
+    ),
+  );
+}
+
 
   Widget _buildBody(int index) {
     switch (index) {

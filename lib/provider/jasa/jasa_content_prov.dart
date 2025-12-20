@@ -3,6 +3,7 @@ import 'package:tobo_apk/model/jasa_model.dart';
 
 class JasaContentProv extends ChangeNotifier {
   final List<JasaModel> _jasaList = [
+    // ================= INTERIOR =================
     JasaModel(
       id: '1',
       title: 'Desain Interior',
@@ -46,6 +47,61 @@ class JasaContentProv extends ChangeNotifier {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sadsadsasadddasdassadasdsad.',
       image: 'assets/images/jasa3.png',
       category: 'Interior',
+      whatsappMessage: 'Halo, saya tertarik dengan jasa Custom Furniture',
+    ),
+
+    // ================= KONSTRUKSI =================
+    JasaModel(
+      id: '6',
+      title: 'Paving Block',
+      description: 'Pengerjaan konstruksi ringan untuk rumah dan bangunan.',
+      image: 'assets/images/jasa.png',
+      category: 'Konstruksi',
+      whatsappMessage: 'Halo, saya tertarik dengan jasa Konstruksi Ringan',
+    ),
+    JasaModel(
+      id: '7',
+      title: 'Pagar',
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sadsadsasadddasdassadasdsad.',
+      image: 'assets/images/jasa.png',
+      category: 'Konstruksi',
+      whatsappMessage: 'Halo, saya tertarik dengan jasa Desain Interior',
+    ),
+    JasaModel(
+      id: '8',
+      title: 'Renovasi Interior',
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sadsadsasadddasdassadasdsad.',
+      image: 'assets/images/jasa2.png',
+      category: 'Konstruksi',
+      whatsappMessage: 'Halo, saya tertarik dengan jasa Renovasi Interior',
+    ),
+    JasaModel(
+      id: '9',
+      title: 'Renovasi Toilet',
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sadsadsasadddasdassadasdsad.',
+      image: 'assets/images/jasa3.png',
+      category: 'Konstruksi',
+      whatsappMessage: 'Halo, saya tertarik dengan jasa Custom Furniture',
+    ),
+    JasaModel(
+      id: '10',
+      title: 'Renovasi Toilet',
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sadsadsasadddasdassadasdsad.',
+      image: 'assets/images/jasa3.png',
+      category: 'Konstruksi',
+      whatsappMessage: 'Halo, saya tertarik dengan jasa Custom Furniture',
+    ),
+    JasaModel(
+      id: '11',
+      title: 'Renovasi Toilet',
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sadsadsasadddasdassadasdsad.',
+      image: 'assets/images/jasa3.png',
+      category: 'Konstruksi',
       whatsappMessage: 'Halo, saya tertarik dengan jasa Custom Furniture',
     ),
   ];

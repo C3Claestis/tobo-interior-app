@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:tobo_apk/provider/home/quick_actions_prov.dart';
 import 'package:tobo_apk/provider/jasa/jasa_content_prov.dart';
-import 'package:tobo_apk/provider/jasa/toggle_text_prov.dart';
 import 'provider/main_navigation_prov.dart';
 import '../base/main_navigation_page.dart';
 import '../page/home_page.dart';
@@ -26,8 +25,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => ProfileProv()),
         ChangeNotifierProvider(create: (_) => SplashscreenProv()),
         ChangeNotifierProvider(create: (_) => MainNavigationProvider()),
-        ChangeNotifierProvider(create: (_) => QuickActionsProv()),        
-        ChangeNotifierProvider(create: (_) => ToggleTextProv()),        
+        ChangeNotifierProvider(create: (_) => QuickActionsProv()),                
         ChangeNotifierProvider(create: (_) => JasaContentProv()),        
         ChangeNotifierProvider(create: (_) => ProductProv()..fetchProducts()),
       ],
