@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tobo_apk/page/jasa_page.dart';
+import 'package:tobo_apk/provider/jasa/toggle_text_prov.dart';
 import 'package:tobo_apk/theme/appcolor.dart';
 import '../provider/main_navigation_prov.dart';
 import '../page/home_page.dart';
@@ -18,7 +20,7 @@ class MainNavigationPage extends StatelessWidget {
     final navProv = context.watch<MainNavigationProvider>();
 
     return Scaffold(
-      appBar: _appBar(),
+      appBar: _buildAppBar(navProv.currentIndex, context),
       body: _buildBody(navProv.currentIndex),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 73),
@@ -52,7 +54,7 @@ class MainNavigationPage extends StatelessWidget {
     );
   }
 
-  AppBar _appBar() {
+  AppBar _appBarHome() {
     return AppBar(
       automaticallyImplyLeading: false, // ❌ matikan back button
       elevation: 0,
@@ -92,10 +94,71 @@ class MainNavigationPage extends StatelessWidget {
     );
   }
 
+  AppBar _appBarJasa(BuildContext context) {
+    return AppBar(
+      scrolledUnderElevation: 0,
+      backgroundColor: AppColors.pureWhite,
+      automaticallyImplyLeading: false, // ❌ matikan back button
+      elevation: 0,
+      titleSpacing: 0,
+      title: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _textTab(context, "Interior", 0),
+            _textTab(context, "Konstruksi Ringan", 1),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _textTab(BuildContext context, String text, int index) {
+    final prov = context.watch<ToggleTextProv>();
+    final isActive = prov.selectedIndex == index;
+
+    return Expanded(
+      child: TextButton(
+        onPressed: () => context.read<ToggleTextProv>().select(index),
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          overlayColor: Colors.transparent,
+          splashFactory: NoSplash.splashFactory,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              text,
+              style: GoogleFonts.poppins(
+                fontSize: 14,
+                fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+                color: isActive ? AppColors.softWood : AppColors.black,
+              ),
+            ),
+            const Gap(6),
+            LayoutBuilder(
+              builder: (context, constraints) => AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                height: 3,
+                width: isActive ? constraints.maxWidth : 0,
+                color: AppColors.softWood,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildBody(int index) {
     switch (index) {
       case 0:
         return const HomePage();
+
+      case 1:
+        return const JasaPage();
 
       // case 1:
       //   return FutureBuilder<List<CategoryModel>>(
@@ -111,9 +174,6 @@ class MainNavigationPage extends StatelessWidget {
       //     },
       //   );
 
-      // case 2:
-      //   return const CartPage();
-
       // case 3:
       //   return const FavouritePage();
 
@@ -122,6 +182,17 @@ class MainNavigationPage extends StatelessWidget {
 
       default:
         return const HomePage();
+    }
+  }
+
+  PreferredSizeWidget? _buildAppBar(int index, BuildContext context) {
+    switch (index) {
+      case 0:
+        return _appBarHome();
+      case 1:
+        return _appBarJasa(context);
+      default:
+        return null;
     }
   }
 }
