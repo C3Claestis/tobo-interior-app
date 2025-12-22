@@ -1,0 +1,272 @@
+[
+  {
+    "id": "w1",
+    "title": "Wallpaper Minimalis",
+    "description": "Hadirkan nuansa modern dan bersih di ruangan Anda dengan wallpaper motif minimalis. Garis-garis sederhana dan palet warna netral menciptakan suasana yang tenang dan luas.",
+    "priceMinimum": 100000,
+    "priceMaximum": 150000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w2",
+    "title": "Wallpaper Klasik",
+    "description": "Ciptakan atmosfer mewah dan abadi dengan wallpaper motif klasik. Detail ornamen yang elegan dan warna-warna hangat akan memberikan sentuhan kemegahan pada interior Anda.",
+    "priceMinimum": 120000,
+    "priceMaximum": 180000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w3",
+    "title": "Wallpaper Geometris",
+    "description": "Tampilkan gaya kontemporer yang berani melalui wallpaper motif geometris. Pola-pola yang dinamis dan modern akan menjadi titik fokus yang menarik di setiap ruangan.",
+    "priceMinimum": 110000,
+    "priceMaximum": 160000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w4",
+    "title": "Wallpaper Bunga",
+    "description": "Bawa kesegaran alam ke dalam rumah dengan wallpaper motif bunga yang ceria. Desain floral yang indah akan mencerahkan hari Anda dan memberikan energi positif.",
+    "priceMinimum": 90000,
+    "priceMaximum": 140000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w5",
+    "title": "Wallpaper Abstrak",
+    "description": "Ekspresikan jiwa seni Anda dengan wallpaper motif abstrak. Goresan kuas dan perpaduan warna yang unik akan mengubah dinding Anda menjadi sebuah kanvas artistik.",
+    "priceMinimum": 130000,
+    "priceMaximum": 200000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w6",
+    "title": "Wallpaper Anak",
+    "description": "Ciptakan dunia imajinasi untuk si kecil dengan wallpaper motif anak yang lucu dan edukatif. Karakter-karakter menggemaskan akan menemani waktu bermain dan belajar mereka.",
+    "priceMinimum": 80000,
+    "priceMaximum": 120000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w7",
+    "title": "Wallpaper Batu Alam",
+    "description": "Dapatkan nuansa natural dan kokoh dengan wallpaper motif batu alam. Tekstur yang realistis memberikan kesan sejuk dan menyatu dengan alam tanpa perlu instalasi yang rumit.",
+    "priceMinimum": 150000,
+    "priceMaximum": 220000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w8",
+    "title": "Wallpaper Vintage",
+    "description": "Ajak kembali kenangan masa lalu dengan wallpaper motif vintage. Pola retro dan warna-warna nostalgia akan memberikan karakter unik dan hangat pada ruangan Anda.",
+    "priceMinimum": 100000,
+    "priceMaximum": 170000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w9",
+    "title": "Wallpaper Polos",
+    "description": "Untuk tampilan yang simpel namun tetap berkelas, pilih wallpaper polos kami. Tersedia dalam berbagai pilihan warna untuk disesuaikan dengan skema desain interior Anda.",
+    "priceMinimum": 70000,
+    "priceMaximum": 100000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "w10",
+    "title": "Wallpaper Mewah",
+    "description": "Tambahkan sentuhan glamor dan kemewahan pada ruangan Anda. Wallpaper dengan aksen metalik atau glitter ini sempurna untuk menciptakan suasana yang istimewa dan elegan.",
+    "priceMinimum": 200000,
+    "priceMaximum": 300000,
+    "imageUrl": "assets/images/wal.jpg",
+    "category": "Wallpaper"
+  },
+  {
+    "id": "h1",
+    "title": "HPL Kayu",
+    "description": "Rasakan kehangatan dan keindahan kayu alami dengan HPL motif kayu premium kami. Tekstur dan corak yang sangat mirip aslinya, cocok untuk furnitur dan panel dinding.",
+    "priceMinimum": 80000,
+    "priceMaximum": 113000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h2",
+    "title": "HPL Solid Color",
+    "description": "Berikan tampilan yang bersih, modern, dan minimalis dengan HPL warna solid. Pilihan ideal untuk dapur, lemari, dan perabotan dengan gaya kontemporer.",
+    "priceMinimum": 70000,
+    "priceMaximum": 100000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h3",
+    "title": "HPL Metalik",
+    "description": "Ciptakan kesan futuristik dan mewah dengan HPL finishing metalik. Efek kilau metalnya cocok untuk aksen pada furnitur, back panel, atau area komersial.",
+    "priceMinimum": 90000,
+    "priceMaximum": 130000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h4",
+    "title": "HPL Marmer",
+    "description": "Hadirkan kemewahan marmer tanpa biaya dan perawatan yang mahal. HPL motif marmer kami memberikan tampilan elegan untuk meja, dinding, hingga kitchen set.",
+    "priceMinimum": 100000,
+    "priceMaximum": 150000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h5",
+    "title": "HPL Tekstur",
+    "description": "Jelajahi berbagai kemungkinan desain dengan HPL bertekstur unik. Dari tekstur kain hingga beton, berikan dimensi baru pada permukaan interior Anda.",
+    "priceMinimum": 85000,
+    "priceMaximum": 120000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h6",
+    "title": "HPL Glossy",
+    "description": "Dapatkan tampilan yang mengkilap dan modern dengan HPL glossy. Permukaannya yang reflektif membantu membuat ruangan terasa lebih terang dan luas.",
+    "priceMinimum": 95000,
+    "priceMaximum": 140000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h7",
+    "title": "HPL Doff",
+    "description": "Untuk kesan yang lebih lembut, elegan, dan bebas sidik jari, pilih HPL dengan finishing doff. Memberikan nuansa premium dan modern pada setiap aplikasi.",
+    "priceMinimum": 95000,
+    "priceMaximum": 140000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h8",
+    "title": "HPL Concrete",
+    "description": "Terapkan gaya industrial yang sedang tren dengan HPL motif beton. Memberikan karakter yang kuat dan maskulin untuk kafe, kantor, atau hunian modern.",
+    "priceMinimum": 110000,
+    "priceMaximum": 160000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h9",
+    "title": "HPL Fabric",
+    "description": "Ciptakan suasana yang hangat dan nyaman seperti di rumah dengan HPL motif kain. Teksturnya yang lembut cocok untuk panel dinding kamar tidur atau ruang keluarga.",
+    "priceMinimum": 100000,
+    "priceMaximum": 145000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "h10",
+    "title": "HPL Leather",
+    "description": "Tambahkan sentuhan kemewahan dan maskulinitas dengan HPL motif kulit. Sempurna untuk panel headboard, meja kerja, atau aksen pada lemari pakaian.",
+    "priceMinimum": 120000,
+    "priceMaximum": 170000,
+    "imageUrl": "assets/images/HPL.png",
+    "category": "HPL"
+  },
+  {
+    "id": "p1",
+    "title": "Panel Dinding 3D",
+    "description": "Berikan dimensi dan kedalaman visual pada dinding Anda dengan panel 3D. Pola-pola timbul yang dinamis menciptakan permainan bayangan yang menakjubkan.",
+    "priceMinimum": 100000,
+    "priceMaximum": 150000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p2",
+    "title": "Panel Dinding Kayu",
+    "description": "Hadirkan keindahan dan kehangatan kayu asli ke dalam ruangan. Panel dari kayu solid memberikan nuansa alami, mewah, dan meningkatkan nilai estetika.",
+    "priceMinimum": 150000,
+    "priceMaximum": 250000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p3",
+    "title": "Panel Dinding WPC",
+    "description": "Pilihan cerdas pengganti kayu, panel WPC tahan air, anti rayap, dan ramah lingkungan. Cocok untuk area indoor maupun semi-outdoor.",
+    "priceMinimum": 120000,
+    "priceMaximum": 200000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p4",
+    "title": "Panel Dinding PVC",
+    "description": "Solusi praktis dan ekonomis untuk melapisi dinding. Panel PVC ringan, mudah dipasang, dan tersedia dalam beragam motif, dari kayu hingga marmer.",
+    "priceMinimum": 80000,
+    "priceMaximum": 130000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p5",
+    "title": "Panel Dinding Akustik",
+    "description": "Ciptakan ruangan yang tenang dan nyaman dengan panel akustik. Efektif mengurangi gema dan kebisingan, ideal untuk home theater, studio, atau ruang kerja.",
+    "priceMinimum": 200000,
+    "priceMaximum": 350000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p6",
+    "title": "Panel Dinding Cermin",
+    "description": "Buat ilusi ruangan yang lebih luas dan terang dengan panel cermin. Memberikan sentuhan glamor dan modern, cocok untuk ruang tamu atau area komersial.",
+    "priceMinimum": 180000,
+    "priceMaximum": 300000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p7",
+    "title": "Panel Dinding Batu",
+    "description": "Dapatkan kemewahan abadi dari panel batu alam asli. Setiap lembarnya unik, memberikan karakter yang kuat, natural, dan sangat premium pada dinding Anda.",
+    "priceMinimum": 250000,
+    "priceMaximum": 400000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p8",
+    "title": "Panel Dinding Berlampu",
+    "description": "Kombinasi fungsional dan estetis, panel dinding ini dilengkapi dengan lampu LED. Menciptakan pencahayaan ambien yang dramatis dan modern.",
+    "priceMinimum": 300000,
+    "priceMaximum": 500000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p9",
+    "title": "Panel Dinding Kisi-kisi",
+    "description": "Tambahkan elemen arsitektural yang menarik dengan panel kisi-kisi. Dapat berfungsi sebagai partisi, aksen dinding, atau untuk menyamarkan area tertentu.",
+    "priceMinimum": 130000,
+    "priceMaximum": 220000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  },
+  {
+    "id": "p10",
+    "title": "Panel Dinding Geometris",
+    "description": "Tegaskan gaya modern Anda dengan panel dinding berpola geometris. Garis-garis tegas dan bentuk yang terstruktur menciptakan fokus visual yang kuat.",
+    "priceMinimum": 140000,
+    "priceMaximum": 230000,
+    "imageUrl": "assets/images/panel.jpg",
+    "category": "Panel"
+  }
+]

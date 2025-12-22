@@ -6,7 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/jasa_page.dart';
-import 'package:tobo_apk/provider/jasa/jasa_content_prov.dart';
+import 'package:tobo_apk/page/katalog_page.dart';
 import 'package:tobo_apk/theme/appcolor.dart';
 import '../provider/main_navigation_prov.dart';
 import '../page/home_page.dart';
@@ -94,78 +94,60 @@ class MainNavigationPage extends StatelessWidget {
     );
   }
 
-  AppBar _appBarJasa(BuildContext context) {
+  AppBar _appBarJasa() {
     return AppBar(
       scrolledUnderElevation: 0,
       backgroundColor: AppColors.pureWhite,
       automaticallyImplyLeading: false, // ❌ matikan back button
       elevation: 0,
       titleSpacing: 0,
-      title: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _textTab(context, "Interior", 0),
-            _textTab(context, "Konstruksi Ringan", 1),
-          ],
+      title: Container(
+        width: double.infinity,
+        alignment: Alignment.center,
+        child: Text(
+          "Jasa",
+          style: GoogleFonts.poppins(
+            fontSize: 18,
+            color: AppColors.black,
+            fontWeight: FontWeight.w500,
+          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
   }
 
-  Widget _textTab(BuildContext context, String text, int index) {
-  return Expanded(
-    child: Consumer<JasaContentProv>(
-      builder: (context, jasaProv, _) {
-        final isActive = jasaProv.selectedTab == index;
-
-        return TextButton(
-          onPressed: () => jasaProv.changeTab(index),
-          style: TextButton.styleFrom(
-            padding: EdgeInsets.zero,
-            overlayColor: Colors.transparent,
-            splashFactory: NoSplash.splashFactory,
+  AppBar _appBarKatalog() {
+    return AppBar(
+      scrolledUnderElevation: 0,
+      backgroundColor: AppColors.pureWhite,
+      automaticallyImplyLeading: false, // ❌ matikan back button
+      elevation: 0,
+      titleSpacing: 0,
+      title: Container(
+        width: double.infinity,
+        alignment: Alignment.center,
+        child: Text(
+          "Katalog Produk",
+          style: GoogleFonts.poppins(
+            fontSize: 18,
+            color: AppColors.black,
+            fontWeight: FontWeight.w500,
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                text,
-                style: GoogleFonts.poppins(
-                  fontSize: 14,
-                  fontWeight:
-                      isActive ? FontWeight.bold : FontWeight.normal,
-                  color: isActive
-                      ? AppColors.softWood
-                      : AppColors.black,
-                ),
-              ),
-              const Gap(6),
-              LayoutBuilder(
-                builder: (context, constraints) => AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  height: 3,
-                  width: isActive ? constraints.maxWidth : 0,
-                  color: AppColors.softWood,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    ),
-  );
-}
-
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
 
   Widget _buildBody(int index) {
     switch (index) {
       case 0:
         return const HomePage();
-
       case 1:
         return const JasaPage();
+      case 2:
+        return const KatalogPage();
 
       // case 1:
       //   return FutureBuilder<List<CategoryModel>>(
@@ -197,7 +179,9 @@ class MainNavigationPage extends StatelessWidget {
       case 0:
         return _appBarHome();
       case 1:
-        return _appBarJasa(context);
+        return _appBarJasa();
+      case 2:
+        return _appBarKatalog();
       default:
         return null;
     }

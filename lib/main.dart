@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:tobo_apk/page/katalog_page.dart';
 import 'package:tobo_apk/provider/home/quick_actions_prov.dart';
 import 'package:tobo_apk/provider/jasa/jasa_content_prov.dart';
+import 'package:tobo_apk/provider/katalog/katalog_category_prov.dart';
+import 'package:tobo_apk/provider/katalog/katalog_prov.dart';
 import 'provider/main_navigation_prov.dart';
 import '../base/main_navigation_page.dart';
 import '../page/home_page.dart';
-import '../provider/product_prov.dart';
 import '../page/splashscreen.dart';
 import '../provider/profile_prov.dart';
 import '../provider/splashscreen_prov.dart';
@@ -27,7 +29,9 @@ void main() async {
         ChangeNotifierProvider(create: (_) => MainNavigationProvider()),
         ChangeNotifierProvider(create: (_) => QuickActionsProv()),                
         ChangeNotifierProvider(create: (_) => JasaContentProv()),        
-        ChangeNotifierProvider(create: (_) => ProductProv()..fetchProducts()),
+        ChangeNotifierProvider(create: (_) => KatalogCategoryProv()),
+        ChangeNotifierProvider(create: (_) => KatalogProvider()..loadData),        
+        // ChangeNotifierProvider(create: (_) => ProductProv()..fetchProducts()),
       ],
       child: const MyApp(),
     ),
@@ -45,6 +49,7 @@ class MyApp extends StatelessWidget {
       AppRoutes.mainPage: (context) => const MainNavigationPage(),
       AppRoutes.splashscreen: (context) => const Splashscreen(),
       AppRoutes.home: (context) => const HomePage(),
+      AppRoutes.katalogProduk: (context) => const KatalogPage(),
     },
   );
 }
