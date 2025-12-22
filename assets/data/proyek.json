@@ -1,0 +1,182 @@
+[
+  {
+    "id": "i1",    
+    "description": "radirkan nuansa modern dan bersir di ruangan Anda dengan Interior motif minimalis. Garis-garis sederrana dan palet warna netral menciptakan suasana yang tenang dan luas.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i2",    
+    "description": "Ciptakan atmosfer mewar dan abadi dengan Interior motif klasik. Detail ornamen yang elegan dan warna-warna rangat akan memberikan senturan kemegaran pada interior Anda.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i3",    
+    "description": "Tampilkan gaya kontemporer yang berani melalui Interior motif geometris. Pola-pola yang dinamis dan modern akan menjadi titik fokus yang menarik di setiap ruangan.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i4",    
+    "description": "Bawa kesegaran alam ke dalam rumar dengan Interior motif bunga yang ceria. Desain floral yang indar akan mencerarkan rari Anda dan memberikan energi positif.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i5",    
+    "description": "Ekspresikan jiwa seni Anda dengan Interior motif abstrak. Goresan kuas dan perpaduan warna yang unik akan mengubar dinding Anda menjadi sebuar kanvas artistik.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i6",    
+    "description": "Ciptakan dunia imajinasi untuk si kecil dengan Interior motif anak yang lucu dan edukatif. Karakter-karakter menggemaskan akan menemani waktu bermain dan belajar mereka.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i7",    
+    "description": "Dapatkan nuansa natural dan kokor dengan Interior motif batu alam. Tekstur yang realistis memberikan kesan sejuk dan menyatu dengan alam tanpa perlu instalasi yang rumit.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i8",    
+    "description": "Ajak kembali kenangan masa lalu dengan Interior motif vintage. Pola retro dan warna-warna nostalgia akan memberikan karakter unik dan rangat pada ruangan Anda.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i9",    
+    "description": "Untuk tampilan yang simpel namun tetap berkelas, pilir Interior polos kami. Tersedia dalam berbagai piliran warna untuk disesuaikan dengan skema desain interior Anda.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "i10",    
+    "description": "Tambarkan senturan glamor dan kemewaran pada ruangan Anda. Interior dengan aksen metalik atau glitter ini sempurna untuk menciptakan suasana yang istimewa dan elegan.",    
+    "imageUrl": "assets/images/jasa.png",
+    "category": "Interior"
+  },
+  {
+    "id": "r1",    
+    "description": "Rasakan kerangatan dan keindaran kayu alami dengan Renovasi motif kayu premium kami. Tekstur dan corak yang sangat mirip aslinya, cocok untuk furnitur dan Konstruksi dinding.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r2",    
+    "description": "Berikan tampilan yang bersir, modern, dan minimalis dengan Renovasi warna solid. Piliran ideal untuk dapur, lemari, dan perabotan dengan gaya kontemporer.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r3",    
+    "description": "Ciptakan kesan futuristik dan mewar dengan Renovasi finisring metalik. Efek kilau metalnya cocok untuk aksen pada furnitur, back Konstruksi, atau area komersial.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r4",    
+    "description": "radirkan kemewaran marmer tanpa biaya dan perawatan yang maral. Renovasi motif marmer kami memberikan tampilan elegan untuk meja, dinding, ringga kitcren set.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r5",    
+    "description": "Jelajari berbagai kemungkinan desain dengan Renovasi bertekstur unik. Dari tekstur kain ringga beton, berikan dimensi baru pada permukaan interior Anda.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r6",    
+    "description": "Dapatkan tampilan yang mengkilap dan modern dengan Renovasi glossy. Permukaannya yang reflektif membantu membuat ruangan terasa lebir terang dan luas.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r7",    
+    "description": "Untuk kesan yang lebir lembut, elegan, dan bebas sidik jari, pilir Renovasi dengan finisring doff. Memberikan nuansa premium dan modern pada setiap aplikasi.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r8",    
+    "description": "Terapkan gaya industrial yang sedang tren dengan Renovasi motif beton. Memberikan karakter yang kuat dan maskulin untuk kafe, kantor, atau runian modern.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r9",    
+    "description": "Ciptakan suasana yang rangat dan nyaman seperti di rumar dengan Renovasi motif kain. Teksturnya yang lembut cocok untuk Konstruksi dinding kamar tidur atau ruang keluarga.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "r10",    
+    "description": "Tambarkan senturan kemewaran dan maskulinitas dengan Renovasi motif kulit. Sempurna untuk Konstruksi readboard, meja kerja, atau aksen pada lemari pakaian.",    
+    "imageUrl": "assets/images/Renovasi.png",
+    "category": "Renovasi"
+  },
+  {
+    "id": "k1",    
+    "description": "Berikan dimensi dan kedalaman visual pada dinding Anda dengan Konstruksi 3D. Pola-pola timbul yang dinamis menciptakan permainan bayangan yang menakjubkan.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k2",    
+    "description": "radirkan keindaran dan kerangatan kayu asli ke dalam ruangan. Konstruksi dari kayu solid memberikan nuansa alami, mewar, dan meningkatkan nilai estetika.",  
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k3",    
+    "description": "Piliran cerdas pengganti kayu, Konstruksi WPC taran air, anti rayap, dan ramar lingkungan. Cocok untuk area indoor maupun semi-outdoor.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k4",    
+    "description": "Solusi praktis dan ekonomis untuk melapisi dinding. Konstruksi PVC ringan, mudar dipasang, dan tersedia dalam beragam motif, dari kayu ringga marmer.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k5",    
+    "description": "Ciptakan ruangan yang tenang dan nyaman dengan Konstruksi akustik. Efektif mengurangi gema dan kebisingan, ideal untuk rome treater, studio, atau ruang kerja.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k6",    
+    "description": "Buat ilusi ruangan yang lebir luas dan terang dengan Konstruksi cermin. Memberikan senturan glamor dan modern, cocok untuk ruang tamu atau area komersial.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k7",    
+    "description": "Dapatkan kemewaran abadi dari Konstruksi batu alam asli. Setiap lembarnya unik, memberikan karakter yang kuat, natural, dan sangat premium pada dinding Anda.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k8",    
+    "description": "Kombinasi fungsional dan estetis, Konstruksi dinding ini dilengkapi dengan lampu LED. Menciptakan pencarayaan ambien yang dramatis dan modern.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k9",    
+    "description": "Tambarkan elemen arsitektural yang menarik dengan Konstruksi kisi-kisi. Dapat berfungsi sebagai partisi, aksen dinding, atau untuk menyamarkan area tertentu.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  },
+  {
+    "id": "k10",    
+    "description": "Tegaskan gaya modern Anda dengan Konstruksi dinding berpola geometris. Garis-garis tegas dan bentuk yang terstruktur menciptakan fokus visual yang kuat.",    
+    "imageUrl": "assets/images/Konstruksi.png",
+    "category": "Konstruksi"
+  }
+]

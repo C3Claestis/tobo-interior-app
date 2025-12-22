@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/jasa_page.dart';
 import 'package:tobo_apk/page/katalog_page.dart';
+import 'package:tobo_apk/page/proyek_page.dart';
 import 'package:tobo_apk/theme/appcolor.dart';
 import '../provider/main_navigation_prov.dart';
 import '../page/home_page.dart';
@@ -94,7 +95,7 @@ class MainNavigationPage extends StatelessWidget {
     );
   }
 
-  AppBar _appBarJasa() {
+  AppBar _appBarName(String name) {
     return AppBar(
       scrolledUnderElevation: 0,
       backgroundColor: AppColors.pureWhite,
@@ -105,30 +106,7 @@ class MainNavigationPage extends StatelessWidget {
         width: double.infinity,
         alignment: Alignment.center,
         child: Text(
-          "Jasa",
-          style: GoogleFonts.poppins(
-            fontSize: 18,
-            color: AppColors.black,
-            fontWeight: FontWeight.w500,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-  }
-
-  AppBar _appBarKatalog() {
-    return AppBar(
-      scrolledUnderElevation: 0,
-      backgroundColor: AppColors.pureWhite,
-      automaticallyImplyLeading: false, // ❌ matikan back button
-      elevation: 0,
-      titleSpacing: 0,
-      title: Container(
-        width: double.infinity,
-        alignment: Alignment.center,
-        child: Text(
-          "Katalog Produk",
+          name,
           style: GoogleFonts.poppins(
             fontSize: 18,
             color: AppColors.black,
@@ -148,7 +126,8 @@ class MainNavigationPage extends StatelessWidget {
         return const JasaPage();
       case 2:
         return const KatalogPage();
-
+      case 3:
+        return const ProyekPage();
       // case 1:
       //   return FutureBuilder<List<CategoryModel>>(
       //     future: CategoryService().getCategories(),
@@ -179,9 +158,11 @@ class MainNavigationPage extends StatelessWidget {
       case 0:
         return _appBarHome();
       case 1:
-        return _appBarJasa();
+        return _appBarName("Jasa");
       case 2:
-        return _appBarKatalog();
+        return _appBarName("Katalog Produk");
+      case 3:
+        return _appBarName("Proyek Kami");
       default:
         return null;
     }

@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/katalog_page.dart';
 import 'package:tobo_apk/provider/home/quick_actions_prov.dart';
 import 'package:tobo_apk/provider/jasa/jasa_content_prov.dart';
-import 'package:tobo_apk/provider/katalog/katalog_category_prov.dart';
 import 'package:tobo_apk/provider/katalog/katalog_prov.dart';
+import 'package:tobo_apk/provider/proyek/proyek_prov.dart';
 import 'provider/main_navigation_prov.dart';
 import '../base/main_navigation_page.dart';
 import '../page/home_page.dart';
@@ -27,10 +27,10 @@ void main() async {
         ChangeNotifierProvider(create: (_) => ProfileProv()),
         ChangeNotifierProvider(create: (_) => SplashscreenProv()),
         ChangeNotifierProvider(create: (_) => MainNavigationProvider()),
-        ChangeNotifierProvider(create: (_) => QuickActionsProv()),                
-        ChangeNotifierProvider(create: (_) => JasaContentProv()),        
-        ChangeNotifierProvider(create: (_) => KatalogCategoryProv()),
-        ChangeNotifierProvider(create: (_) => KatalogProvider()..loadData),        
+        ChangeNotifierProvider(create: (_) => QuickActionsProv()),
+        ChangeNotifierProvider(create: (_) => JasaContentProv()),
+        ChangeNotifierProvider(create: (_) => ProyekProvider()..loadData),
+        ChangeNotifierProvider(create: (_) => KatalogProvider()..loadData),
         // ChangeNotifierProvider(create: (_) => ProductProv()..fetchProducts()),
       ],
       child: const MyApp(),
@@ -59,7 +59,7 @@ class AppRoutes {
   static const home = '/home';
   static const splashscreen = '/splashscreen';
   static const konstruksiRingan = '/konstruksiRingan';
-  static const interior = '/interior'; 
-  static const renovasi = '/renovasi';  
-  static const katalogProduk = '/katalogProduk';      
+  static const interior = '/interior';
+  static const renovasi = '/renovasi';
+  static const katalogProduk = '/katalogProduk';
 }
