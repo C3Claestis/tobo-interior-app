@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:tobo_apk/provider/proyek/proyek_prov.dart';
-import 'package:tobo_apk/theme/appcolor.dart';
-import 'package:tobo_apk/widget/proyek/proyek_card_widget.dart';
+import '../provider/proyek/proyek_prov.dart';
+import '../theme/appcolor.dart';
+import '../widget/proyek/proyek_card_widget.dart';
 
 class ProyekPage extends StatelessWidget {
   const ProyekPage({super.key});

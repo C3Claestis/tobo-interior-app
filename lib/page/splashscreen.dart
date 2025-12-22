@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tobo_apk/base/responsive_page.dart';
 import 'package:gap/gap.dart';
+import '../base/responsive_page.dart';
 import '../provider/splashscreen_prov.dart';
 
 class Splashscreen extends StatelessWidget {

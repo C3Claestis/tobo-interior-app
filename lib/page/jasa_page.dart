@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:tobo_apk/provider/jasa/jasa_content_prov.dart';
-import 'package:tobo_apk/theme/appcolor.dart';
-import 'package:tobo_apk/widget/jasa/jasa_card_widget.dart';
+import '../provider/jasa/jasa_content_prov.dart';
+import '../theme/appcolor.dart';
+import '../widget/jasa/jasa_card_widget.dart';
 
 class JasaPage extends StatelessWidget {
   const JasaPage({super.key});

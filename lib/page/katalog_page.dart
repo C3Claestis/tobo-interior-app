@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:tobo_apk/provider/katalog/katalog_prov.dart';
-import 'package:tobo_apk/theme/appcolor.dart';
-import 'package:tobo_apk/widget/katalog/katalog_card_widget.dart';
+import '../provider/katalog/katalog_prov.dart';
+import '../theme/appcolor.dart';
+import '../widget/katalog/katalog_card_widget.dart';
 
 class KatalogPage extends StatelessWidget {
   const KatalogPage({super.key});

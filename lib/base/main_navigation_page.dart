@@ -127,27 +127,7 @@ class MainNavigationPage extends StatelessWidget {
       case 2:
         return const KatalogPage();
       case 3:
-        return const ProyekPage();
-      // case 1:
-      //   return FutureBuilder<List<CategoryModel>>(
-      //     future: CategoryService().getCategories(),
-      //     builder: (context, snapshot) {
-      //       if (snapshot.connectionState == ConnectionState.waiting) {
-      //         return const Center(child: CircularProgressIndicator());
-      //       }
-      //       if (!snapshot.hasData) {
-      //         return const Center(child: Text("No Data"));
-      //       }
-      //       return FindproductPage(categories: snapshot.data!);
-      //     },
-      //   );
-
-      // case 3:
-      //   return const FavouritePage();
-
-      // case 4:
-      //   return const AccountPage();
-
+        return const ProyekPage();    
       default:
         return const HomePage();
     }
