@@ -1,0 +1,47 @@
+import 'dart:async';
+import 'package:flutter/material.dart';
+
+class DetailProdcutBannerProv extends ChangeNotifier {
+  final PageController pageController = PageController();
+  Timer? _timer;
+
+  int _currentIndex = 0;
+  int get currentIndex => _currentIndex;
+
+  final List<String> bannerImages = [
+    "assets/images/wal.jpg",
+    "assets/images/wal.jpg",
+    "assets/images/wal.jpg",
+  ];
+
+  DetailProdcutBannerProv() {
+    _startAutoSlide();
+  }
+
+  void _startAutoSlide() {
+    _timer = Timer.periodic(const Duration(seconds: 3), (_) {
+      _currentIndex =
+          (_currentIndex + 1) % bannerImages.length;
+
+      pageController.animateToPage(
+        _currentIndex,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+
+      notifyListeners();
+    });
+  }
+
+  void onPageChanged(int index) {
+    _currentIndex = index;
+    notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    pageController.dispose();
+    super.dispose();
+  }
+}

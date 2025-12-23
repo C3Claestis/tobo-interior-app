@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,105 +48,112 @@ class DetailJasaPage extends StatelessWidget {
       ),
     ];
 
-    return Scaffold(
-      body: SingleChildScrollView(
-        // tambah sesuai konten
-        child: Stack(
-          children: [
-            Stack(children: [_bgImg(), _header(context)]),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.white, // BAR PUTIH
+        statusBarIconBrightness: Brightness.light, // ICON HITAM (Android)
+        statusBarBrightness: Brightness.light, // iOS
+      ),
+      child: Scaffold(
+        body: SingleChildScrollView(
+          // tambah sesuai konten
+          child: Stack(
+            children: [
+              Stack(children: [_bgImg(), _header(context)]),
 
-            Container(
-              margin: EdgeInsets.only(top: 300 - (height * 0.12)),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                    topRight: Radius.circular(25),
+              Container(
+                margin: EdgeInsets.only(top: 300 - (height * 0.12)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    ),
+                    color: AppColors.pureWhite,
                   ),
-                  color: AppColors.pureWhite,
-                ),
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(25),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Desain Interior",
-                        style: GoogleFonts.inter(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.black,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(25),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Desain Interior",
+                          style: GoogleFonts.inter(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.black,
+                          ),
                         ),
-                      ),
-                      const Gap(12),
-                      _tittle("Deskripsi"),
-                      const Gap(5),
-                      Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                        style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          color: AppColors.black,
+                        const Gap(12),
+                        _tittle("Deskripsi"),
+                        const Gap(5),
+                        Text(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            color: AppColors.black,
+                          ),
+                          textAlign: TextAlign.justify,
                         ),
-                        textAlign: TextAlign.justify,
-                      ),
-                      const Gap(12),
-                      _tittle("Lingkup Pekerjaan"),
-                      const Gap(5),
-                      Column(
-                        children: [
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),
-                          bulletText("Lorem ipsum dolor sit amet"),                          
-                        ],
-                      ),
-                      const Gap(12),
-                      _tittle("Proses Kerja"),
-                      const Gap(12),
-                      Column(
-                        children: List.generate(steps.length, (index) {
-                          final item = steps[index];
-                          return timelineStep(
-                            step: item.step,
-                            title: item.title,
-                            icon: item.icon,
-                            isLast: index == steps.length - 1,
-                          );
-                        }),
-                      ),
-                      const Gap(20),
-                      SizedBox(
-                        height: 30,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        const Gap(12),
+                        _tittle("Lingkup Pekerjaan"),
+                        const Gap(5),
+                        Column(
                           children: [
-                            _buttons(
-                              "Minta Estimasi",
-                              "assets/svgs/mintaestimasi.svg",
-                              false,
-                            ),
-                            const Gap(20),
-                            _buttons(
-                              "Konsultasi via WhatsApp",
-                              "assets/svgs/wa.svg",
-                              true,
-                            ),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
+                            bulletText("Lorem ipsum dolor sit amet"),
                           ],
                         ),
-                      ),
-                      const Gap(30),
-                    ],
+                        const Gap(12),
+                        _tittle("Proses Kerja"),
+                        const Gap(12),
+                        Column(
+                          children: List.generate(steps.length, (index) {
+                            final item = steps[index];
+                            return timelineStep(
+                              step: item.step,
+                              title: item.title,
+                              icon: item.icon,
+                              isLast: index == steps.length - 1,
+                            );
+                          }),
+                        ),
+                        const Gap(20),
+                        SizedBox(
+                          height: 30,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              _buttons(
+                                "Minta Estimasi",
+                                "assets/svgs/mintaestimasi.svg",
+                                false,
+                              ),
+                              const Gap(20),
+                              _buttons(
+                                "Konsultasi via WhatsApp",
+                                "assets/svgs/wa.svg",
+                                true,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Gap(30),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

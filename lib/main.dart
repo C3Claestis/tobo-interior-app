@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:tobo_apk/page/detail_product_page.dart';
 import 'provider/main_navigation_prov.dart';
 import '../page/detail_jasa_page.dart';
 import '../page/katalog_page.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
       AppRoutes.home: (context) => const HomePage(),
       AppRoutes.katalogProduk: (context) => const KatalogPage(),
       AppRoutes.detailJasa: (context) => const DetailJasaPage(),
+      AppRoutes.detailKatalog: (context) => const DetailProductPage(),
     },
   );
 }
