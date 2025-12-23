@@ -17,59 +17,62 @@ class ProyekCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.pureWhite,
-        borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(10, 10),
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // ================= IMAGE =================
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-              child: Image.asset(
-                item.imageUrl,
-                height: 93,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-        
-            // ================= CONTENT =================
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 8,
-                left: 10,
-                right: 10,
-                bottom: 5,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    item.description,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.inter(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),                                
-                ],
-              ),
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, '/detailProyek'),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.pureWhite,
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              offset: const Offset(10, 10),
             ),
           ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // ================= IMAGE =================
+              ClipRRect(
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                child: Image.asset(
+                  item.imageUrl,
+                  height: 93,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+          
+              // ================= CONTENT =================
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 8,
+                  left: 10,
+                  right: 10,
+                  bottom: 5,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.description,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.inter(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),                                
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

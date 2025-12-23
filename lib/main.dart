@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/detail_product_page.dart';
+import 'package:tobo_apk/page/detail_proyek_page.dart';
 import 'provider/main_navigation_prov.dart';
 import '../page/detail_jasa_page.dart';
 import '../page/katalog_page.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
       AppRoutes.katalogProduk: (context) => const KatalogPage(),
       AppRoutes.detailJasa: (context) => const DetailJasaPage(),
       AppRoutes.detailKatalog: (context) => const DetailProductPage(),
+      AppRoutes.detailProyek: (context) => const DetailProyekPage(),
     },
   );
 }
@@ -67,4 +69,5 @@ class AppRoutes {
   static const katalogProduk = '/katalogProduk';
   static const detailJasa = '/detailJasa';
   static const detailKatalog = '/detailKatalog';
+  static const detailProyek = '/detailProyek';
 }
