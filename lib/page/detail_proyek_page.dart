@@ -13,6 +13,7 @@ class DetailProyekPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.pureWhite,
       appBar: _appBarName("Detail Proyek"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 25),

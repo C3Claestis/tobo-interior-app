@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/detail_product_page.dart';
 import 'package:tobo_apk/page/detail_proyek_page.dart';
 import 'provider/main_navigation_prov.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
       AppRoutes.detailJasa: (context) => const DetailJasaPage(),
       AppRoutes.detailKatalog: (context) => const DetailProductPage(),
       AppRoutes.detailProyek: (context) => const DetailProyekPage(),
+      AppRoutes.chatPage: (context) => const ChatPage(),
     },
   );
 }
@@ -70,4 +72,5 @@ class AppRoutes {
   static const detailJasa = '/detailJasa';
   static const detailKatalog = '/detailKatalog';
   static const detailProyek = '/detailProyek';
+  static const chatPage = '/chatPage';
 }

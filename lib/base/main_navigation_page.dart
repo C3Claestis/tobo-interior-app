@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/jasa_page.dart';
 import 'package:tobo_apk/page/katalog_page.dart';
 import 'package:tobo_apk/page/proyek_page.dart';
@@ -127,7 +128,9 @@ class MainNavigationPage extends StatelessWidget {
       case 2:
         return const KatalogPage();
       case 3:
-        return const ProyekPage();    
+        return const ProyekPage();
+      case 4:
+        return const ChatPage();
       default:
         return const HomePage();
     }
@@ -143,6 +146,8 @@ class MainNavigationPage extends StatelessWidget {
         return _appBarName("Katalog Produk");
       case 3:
         return _appBarName("Proyek Kami");
+      case 4:
+        return _appBarName("Hubungi Kami");
       default:
         return null;
     }
