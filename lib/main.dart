@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/detail_product_page.dart';
 import 'package:tobo_apk/page/detail_proyek_page.dart';
+import 'package:tobo_apk/page/profile_page.dart';
 import 'provider/main_navigation_prov.dart';
 import '../page/detail_jasa_page.dart';
 import '../page/katalog_page.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
       AppRoutes.detailKatalog: (context) => const DetailProductPage(),
       AppRoutes.detailProyek: (context) => const DetailProyekPage(),
       AppRoutes.chatPage: (context) => const ChatPage(),
+      AppRoutes.profilePage: (context) => const ProfilePage(),
     },
   );
 }
@@ -73,4 +75,5 @@ class AppRoutes {
   static const detailKatalog = '/detailKatalog';
   static const detailProyek = '/detailProyek';
   static const chatPage = '/chatPage';
+  static const profilePage = '/profilePage';
 }

@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tobo_apk/main.dart';
 import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/jasa_page.dart';
 import 'package:tobo_apk/page/katalog_page.dart';
@@ -56,7 +57,7 @@ class MainNavigationPage extends StatelessWidget {
     );
   }
 
-  AppBar _appBarHome() {
+  AppBar _appBarHome(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false, // ❌ matikan back button
       elevation: 0,
@@ -86,7 +87,7 @@ class MainNavigationPage extends StatelessWidget {
             ),
             // 🔹 Right - Notification Icon
             IconButton(
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.profilePage),
               icon: const Icon(Icons.notifications),
               color: AppColors.black,
             ),
@@ -139,7 +140,7 @@ class MainNavigationPage extends StatelessWidget {
   PreferredSizeWidget? _buildAppBar(int index, BuildContext context) {
     switch (index) {
       case 0:
-        return _appBarHome();
+        return _appBarHome(context);
       case 1:
         return _appBarName("Jasa");
       case 2:
