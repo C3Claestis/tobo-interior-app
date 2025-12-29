@@ -5,6 +5,7 @@ import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/detail_product_page.dart';
 import 'package:tobo_apk/page/detail_proyek_page.dart';
 import 'package:tobo_apk/page/profile_page.dart';
+import 'package:tobo_apk/provider/whatsapp_provider.dart';
 import 'provider/main_navigation_prov.dart';
 import '../page/detail_jasa_page.dart';
 import '../page/katalog_page.dart';
@@ -34,6 +35,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => MainNavigationProvider()),
         ChangeNotifierProvider(create: (_) => QuickActionsProv()),
         ChangeNotifierProvider(create: (_) => JasaContentProv()),
+        ChangeNotifierProvider(create: (_) => WhatsAppProvider()),
         ChangeNotifierProvider(create: (_) => ProyekProvider()..loadData),
         ChangeNotifierProvider(create: (_) => KatalogProvider()..loadData),        
       ],

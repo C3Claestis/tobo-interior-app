@@ -10,6 +10,7 @@ import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/jasa_page.dart';
 import 'package:tobo_apk/page/katalog_page.dart';
 import 'package:tobo_apk/page/proyek_page.dart';
+import 'package:tobo_apk/provider/whatsapp_provider.dart';
 import 'package:tobo_apk/theme/appcolor.dart';
 import '../provider/main_navigation_prov.dart';
 import '../page/home_page.dart';
@@ -27,21 +28,38 @@ class MainNavigationPage extends StatelessWidget {
       body: _buildBody(navProv.currentIndex),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 73),
-        child: GestureDetector(
-          onTap: () {},
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.softWood,
-              boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 8)],
-            ),
-            child: Center(
-              child: SizedBox(
-                width: 24,
-                height: 24,
-                child: SvgPicture.asset('assets/svgs/wa.svg'),
+        child: Consumer<WhatsAppProvider>(
+          builder: (context, value, _) => Material(
+            color: Colors.transparent,
+            shape: const CircleBorder(),
+            child: InkWell(
+              customBorder: const CircleBorder(),
+              onTap: value.isLoading
+                  ? null
+                  : () {
+                      value.openWhatsApp(
+                        context: context,
+                        phoneNumber: '628812553446',
+                        message: 'Halo Tobo Interior!',
+                      );
+                    },
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.softWood,
+                  boxShadow: const [
+                    BoxShadow(color: Colors.black26, blurRadius: 8),
+                  ],
+                ),
+                child: Center(
+                  child: SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: SvgPicture.asset('assets/svgs/wa.svg'),
+                  ),
+                ),
               ),
             ),
           ),
@@ -87,7 +105,8 @@ class MainNavigationPage extends StatelessWidget {
             ),
             // 🔹 Right - Notification Icon
             IconButton(
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.profilePage),
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.profilePage),
               icon: const Icon(Icons.notifications),
               color: AppColors.black,
             ),
