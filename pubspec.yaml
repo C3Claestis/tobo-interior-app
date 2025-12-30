@@ -1,5 +1,5 @@
 name: tobo_apk
-description: "A new Flutter project."
+description: "Aplikasi Tobo Interior"
 publish_to: 'none'
 version: 0.1.0
 
@@ -17,6 +17,7 @@ dependencies:
   url_launcher: ^6.2.6  
   flutter_svg: ^2.2.3
   intl: ^0.19.0
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -25,8 +26,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/images/
-    - assets/svgs/        
+    - assets/svgs/
     - assets/data/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_tobo.png"
+
