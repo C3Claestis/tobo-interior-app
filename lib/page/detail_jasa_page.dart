@@ -62,7 +62,7 @@ class DetailJasaPage extends StatelessWidget {
               Stack(children: [_bgImg(), _header(context)]),
 
               Container(
-                margin: EdgeInsets.only(top: 300 - (height * 0.12)),
+                margin: EdgeInsets.only(top: 250 - (height * 0.12)),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
@@ -127,8 +127,7 @@ class DetailJasaPage extends StatelessWidget {
                           }),
                         ),
                         const Gap(20),
-                        SizedBox(
-                          height: 30,
+                        SizedBox(                          
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

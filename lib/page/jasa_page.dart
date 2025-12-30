@@ -43,8 +43,7 @@ class JasaPage extends StatelessWidget {
 
   Widget _headerTab(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      color: AppColors.pureWhite,
+      padding: const EdgeInsets.symmetric(horizontal: 16),      
       child: Row(
         children: [
           _textTab(context, "Interior", 0),

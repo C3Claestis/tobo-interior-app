@@ -118,8 +118,7 @@ class MainNavigationPage extends StatelessWidget {
 
   AppBar _appBarName(String name) {
     return AppBar(
-      scrolledUnderElevation: 0,
-      backgroundColor: AppColors.pureWhite,
+      scrolledUnderElevation: 0,      
       automaticallyImplyLeading: false, // ❌ matikan back button
       elevation: 0,
       titleSpacing: 0,

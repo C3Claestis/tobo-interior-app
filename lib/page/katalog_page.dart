@@ -51,11 +51,11 @@ class KatalogPage extends StatelessWidget {
                 return GridView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemCount: items.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200, // max lebar 1 item
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 160 / 190,
+                    childAspectRatio: 0.85, // rasio fleksibel
                   ),
                   itemBuilder: (context, index) {
                     final item = items[index];
@@ -77,10 +77,18 @@ class KatalogPage extends StatelessWidget {
         // Tentukan active index berdasarkan enum di provider
         int activeIndex = 0;
         switch (prov.activeTab) {
-          case KatalogTab.semua: activeIndex = 0; break;
-          case KatalogTab.wallpaper: activeIndex = 1; break;
-          case KatalogTab.hpl: activeIndex = 2; break;
-          case KatalogTab.panel: activeIndex = 3; break;
+          case KatalogTab.semua:
+            activeIndex = 0;
+            break;
+          case KatalogTab.wallpaper:
+            activeIndex = 1;
+            break;
+          case KatalogTab.hpl:
+            activeIndex = 2;
+            break;
+          case KatalogTab.panel:
+            activeIndex = 3;
+            break;
         }
         final bool isActive = activeIndex == index;
 

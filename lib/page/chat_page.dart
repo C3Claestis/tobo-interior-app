@@ -12,7 +12,6 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.pureWhite,
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
@@ -28,7 +27,7 @@ class ChatPage extends StatelessWidget {
               const Gap(8),
               _templateChat(),
               const Gap(8),
-              _thereeButton(),
+              _threeButton(),
               _footer(),
             ],
           ),
@@ -103,19 +102,26 @@ class ChatPage extends StatelessWidget {
     );
   }
 
-  Padding _thereeButton() {
+  Padding _threeButton() {
+    final items = [
+      {"title": "Interior Rumah", "icon": "assets/svgs/sofa.svg"},
+      {"title": "Tanya Produk", "icon": "assets/svgs/katalog.svg"},
+      {"title": "Konstruksi Ringan", "icon": "assets/svgs/konstruksi.svg"},
+    ];
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 13.0),
+      padding: const EdgeInsets.symmetric(horizontal: 13),
       child: SizedBox(
-        width: double.infinity,
-        height: 24,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buttons("Interior Rumah", "assets/svgs/sofa.svg"),
-            _buttons("Tanya Produk", "assets/svgs/katalog.svg"),
-            _buttons("Konstruksi Ringan", "assets/svgs/konstruksi.svg"),
-          ],
+        height: 24, // tinggi tetap
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: items.length,
+          // ignore: unnecessary_underscores
+          separatorBuilder: (_, __) => const SizedBox(width: 12),
+          itemBuilder: (context, index) {
+            final item = items[index];
+            return _buttons(item["title"]!, item["icon"]!);
+          },
         ),
       ),
     );

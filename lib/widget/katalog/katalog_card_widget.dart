@@ -37,19 +37,23 @@ class KatalogCardWidget extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.min,
           children: [
             // ================= IMAGE =================
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-              child: Image.asset(
-                item.imageUrl,
-                height: 120,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(16),
+              ),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: Image.asset(
+                  item.imageUrl,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
               ),
             ),
-      
+
             // ================= CONTENT =================
             Padding(
               padding: const EdgeInsets.only(
@@ -71,7 +75,7 @@ class KatalogCardWidget extends StatelessWidget {
                     ),
                   ),
                   const Gap(4),
-      
+
                   Text(
                     "${rupiah(item.priceMinimum)} - ${rupiah(item.priceMaximum)}",
                     style: GoogleFonts.inter(
@@ -81,7 +85,7 @@ class KatalogCardWidget extends StatelessWidget {
                     ),
                   ),
                   const Gap(5),
-      
+
                   // ================= BUTTON =================
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -106,7 +110,7 @@ class KatalogCardWidget extends StatelessWidget {
                             maxLines: 1,
                           ),
                           style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.zero,
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                             backgroundColor: AppColors.softWood,
                             foregroundColor: AppColors.pureWhite,
                             elevation: 0,
