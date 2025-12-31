@@ -27,7 +27,7 @@ class ProyekCardWidget extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 8,
-              offset: const Offset(10, 10),
+              offset: const Offset(7, 7),
             ),
           ],
         ),

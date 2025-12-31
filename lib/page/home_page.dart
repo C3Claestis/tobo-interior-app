@@ -44,53 +44,57 @@ class HomePage extends StatelessWidget {
               const Gap(12),
               PromoBannerWidget(),
               const Gap(12),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Butuh estimitasi cepat?",
-                    style: GoogleFonts.inter(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    ),
-                  ),
-                  const Gap(9),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      'assets/svgs/wa.svg',
-                      width: 12,
-                      height: 12,
-                      color: AppColors.pureWhite,
-                    ),
-                    label: Text(
-                      "Chat Via Whatsapp",
-                      style: GoogleFonts.inter(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.pureWhite,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.softWood,
-                      foregroundColor: AppColors.pureWhite,
-                      minimumSize: const Size(0, 24), // 🔥 height 24
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                      ), // kecilkan padding
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              _footer(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Row _footer() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Butuh estimitasi cepat?",
+          style: GoogleFonts.inter(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+            color: AppColors.black,
+          ),
+        ),
+        const Gap(9),
+        ElevatedButton.icon(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            'assets/svgs/wa.svg',
+            width: 12,
+            height: 12,
+            color: AppColors.pureWhite,
+          ),
+          label: Text(
+            "Chat Via Whatsapp",
+            style: GoogleFonts.inter(
+              fontSize: 10,
+              fontWeight: FontWeight.w600,
+              color: AppColors.pureWhite,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.softWood,
+            foregroundColor: AppColors.pureWhite,
+            minimumSize: const Size(0, 24), // 🔥 height 24
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8,
+            ), // kecilkan padding
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
+          ),
+        ),
+      ],
     );
   }
 

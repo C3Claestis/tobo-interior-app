@@ -55,6 +55,7 @@ class DetailJasaPage extends StatelessWidget {
         statusBarBrightness: Brightness.light, // iOS
       ),
       child: Scaffold(
+        backgroundColor: AppColors.pureWhite,
         body: SingleChildScrollView(
           // tambah sesuai konten
           child: Stack(

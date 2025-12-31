@@ -21,13 +21,13 @@ class ProyekPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          SizedBox(            
             height: 24,
             child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               scrollDirection: Axis.horizontal,
               itemCount: categories.length,
-              separatorBuilder: (_, _) => const Gap(12),
+              separatorBuilder: (_, _) => const Gap(8),
               itemBuilder: (context, index) {
                 return _categoryButton(
                   context,
@@ -37,7 +37,7 @@ class ProyekPage extends StatelessWidget {
               },
             ),
           ),
-          const Gap(16),
+          Container(height: 16, color: AppColors.pureWhite),
           // ================= GRID =================
           Expanded(
             child: Consumer<ProyekProvider>(
@@ -77,10 +77,18 @@ class ProyekPage extends StatelessWidget {
         // Tentukan active index berdasarkan enum di provider
         int activeIndex = 0;
         switch (prov.activeTab) {
-          case ProyekTab.semua: activeIndex = 0; break;
-          case ProyekTab.interior: activeIndex = 1; break;
-          case ProyekTab.renovasi: activeIndex = 2; break;
-          case ProyekTab.konstruksi: activeIndex = 3; break;
+          case ProyekTab.semua:
+            activeIndex = 0;
+            break;
+          case ProyekTab.interior:
+            activeIndex = 1;
+            break;
+          case ProyekTab.renovasi:
+            activeIndex = 2;
+            break;
+          case ProyekTab.konstruksi:
+            activeIndex = 3;
+            break;
         }
         final bool isActive = activeIndex == index;
 

@@ -26,6 +26,7 @@ class DetailProductPage extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => DetailProdcutBannerProv()),
         ],
         child: Scaffold(
+          backgroundColor: AppColors.pureWhite,
           body: SingleChildScrollView(
             child: Column(
               children: [

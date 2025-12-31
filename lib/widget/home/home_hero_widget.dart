@@ -169,6 +169,10 @@ class HomeHeroWidget extends StatelessWidget {
           ),
         ),
         style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          minimumSize: Size.zero, // 🔥 penting
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          visualDensity: VisualDensity.compact,
           backgroundColor: (position == 'left')
               ? AppColors.softWood
               : Colors.transparent,

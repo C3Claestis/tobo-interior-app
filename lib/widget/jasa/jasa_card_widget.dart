@@ -23,6 +23,7 @@ class JasaCardWidget extends StatelessWidget {
         child: SizedBox(
           height: 215,
           child: Card(
+            color: AppColors.pureWhite,
             elevation: 4,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: Stack(

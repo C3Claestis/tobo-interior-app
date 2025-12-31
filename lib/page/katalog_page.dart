@@ -21,13 +21,13 @@ class KatalogPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          SizedBox(            
             height: 24,
             child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               scrollDirection: Axis.horizontal,
               itemCount: categories.length,
-              separatorBuilder: (_, _) => const Gap(12),
+              separatorBuilder: (_, _) => const Gap(8),
               itemBuilder: (context, index) {
                 return _categoryButton(
                   context,
@@ -37,7 +37,7 @@ class KatalogPage extends StatelessWidget {
               },
             ),
           ),
-          const Gap(16),
+          Container(height: 16, color: AppColors.pureWhite),
           // ================= GRID =================
           Expanded(
             child: Consumer<KatalogProvider>(

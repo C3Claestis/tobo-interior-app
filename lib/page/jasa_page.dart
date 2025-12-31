@@ -18,32 +18,41 @@ class JasaPage extends StatelessWidget {
         children: [
           // ================= HEADER (TIDAK SCROLL) =================
           _headerTab(context),
-      
+
           // ================= LIST (SCROLL) =================
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: jasaProv.filteredJasa.length,
-              itemBuilder: (context, index) {
-                final jasa = jasaProv.filteredJasa[index];
-      
-                return JasaCardWidget(
-                  jasa: jasa,
-                  onWhatsappTap: () {
-                    // launch whatsapp
-                  },
-                );
-              },
+           Expanded(
+            child: PageView(
+              controller: jasaProv.pageController,
+              onPageChanged: jasaProv.onPageChanged,
+              children: [
+                _jasaList(jasaProv.filteredJasa),
+                _jasaList(jasaProv.filteredJasa),
+              ],
             ),
-          ),          
+          ),
         ],
       ),
     );
   }
 
+  Widget _jasaList(List jasaList) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(16),
+      itemCount: jasaList.length,
+      itemBuilder: (_, index) {
+        final jasa = jasaList[index];
+        return JasaCardWidget(
+          jasa: jasa,
+          onWhatsappTap: () {},
+        );
+      },
+    );
+  }
+
   Widget _headerTab(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),      
+      color: AppColors.pureWhite,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: [
           _textTab(context, "Interior", 0),

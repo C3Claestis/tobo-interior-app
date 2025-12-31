@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tobo_apk/main.dart';
@@ -24,6 +23,7 @@ class MainNavigationPage extends StatelessWidget {
     final navProv = context.watch<MainNavigationProvider>();
 
     return Scaffold(
+      backgroundColor: AppColors.pureWhite,
       appBar: _buildAppBar(navProv.currentIndex, context),
       body: _buildBody(navProv.currentIndex),
       floatingActionButton: Padding(
@@ -77,38 +77,65 @@ class MainNavigationPage extends StatelessWidget {
 
   AppBar _appBarHome(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: false, // ❌ matikan back button
+      backgroundColor: AppColors.pureWhite,
+      automaticallyImplyLeading: false,
       elevation: 0,
       titleSpacing: 0,
       title: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            // 🔹 Left - Avatar
-            CircleAvatar(
-              radius: 18,
-              backgroundImage: AssetImage('assets/images/logo_tobo.png'),
-            ),
-            const Gap(12),
-            // 🔹 Center - Title
-            Expanded(
-              child: Text(
-                "TOBO Interior",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.black,
-                ),
+            // 🔹 CENTER - TITLE (BENAR-BENAR TENGAH)
+            Text(
+              "TOBO Interior",
+              style: GoogleFonts.poppins(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: AppColors.black,
               ),
             ),
-            // 🔹 Right - Notification Icon
-            IconButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, AppRoutes.profilePage),
-              icon: const Icon(Icons.notifications),
-              color: AppColors.black,
+
+            // 🔹 LEFT & RIGHT CONTENT
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // LEFT
+                CircleAvatar(
+                  radius: 18,
+                  backgroundImage: AssetImage('assets/images/logo_tobo.png'),
+                ),
+
+                // RIGHT
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () =>
+                          Navigator.pushNamed(context, AppRoutes.profilePage),
+                      icon: const Icon(Icons.notifications),
+                      color: AppColors.black,
+                    ),
+                    GestureDetector(
+                      onTap: () =>
+                          Navigator.pushNamed(context, AppRoutes.profilePage),
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.softWood,
+                            width: 2,
+                          ),
+                        ),
+                        child: Center(
+                          child: Image.asset('assets/images/logo_tobo.png'),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
@@ -118,8 +145,10 @@ class MainNavigationPage extends StatelessWidget {
 
   AppBar _appBarName(String name) {
     return AppBar(
-      scrolledUnderElevation: 0,      
+      backgroundColor: AppColors.pureWhite,
+      scrolledUnderElevation: 0,
       automaticallyImplyLeading: false, // ❌ matikan back button
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
       titleSpacing: 0,
       title: Container(

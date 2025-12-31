@@ -106,11 +106,28 @@ class JasaContentProv extends ChangeNotifier {
     ),
   ];
 
+  final PageController pageController = PageController();
+
   int _selectedTab = 0; // 0 = Interior, 1 = Konstruksi Ringan
 
   int get selectedTab => _selectedTab;
 
+  /// 🔥 DIPANGGIL SAAT TAP TAB
   void changeTab(int index) {
+    if (_selectedTab == index) return;
+
+    _selectedTab = index;
+    notifyListeners();
+
+    pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
+    );
+  }
+
+  /// 🔥 DIPANGGIL SAAT SWIPE
+  void onPageChanged(int index) {
     _selectedTab = index;
     notifyListeners();
   }
@@ -121,5 +138,11 @@ class JasaContentProv extends ChangeNotifier {
     } else {
       return _jasaList.where((e) => e.category == 'Konstruksi').toList();
     }
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
   }
 }

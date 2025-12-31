@@ -31,21 +31,19 @@ class KatalogCardWidget extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 8,
-              offset: const Offset(10, 10),
+              offset: const Offset(7, 7),
             ),
           ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
           children: [
-            // ================= IMAGE =================
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(16),
-              ),
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
+            // ================= IMAGE (EXPANDED) =================
+            Expanded(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(16),
+                ),
                 child: Image.asset(
                   item.imageUrl,
                   fit: BoxFit.cover,
@@ -54,7 +52,7 @@ class KatalogCardWidget extends StatelessWidget {
               ),
             ),
 
-            // ================= CONTENT =================
+            // ================= CONTENT (FIXED HEIGHT) =================
             Padding(
               padding: const EdgeInsets.only(
                 top: 8,
@@ -64,6 +62,7 @@ class KatalogCardWidget extends StatelessWidget {
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     item.description,
@@ -86,7 +85,6 @@ class KatalogCardWidget extends StatelessWidget {
                   ),
                   const Gap(5),
 
-                  // ================= BUTTON =================
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -107,25 +105,26 @@ class KatalogCardWidget extends StatelessWidget {
                               color: AppColors.pureWhite,
                               fontWeight: FontWeight.w600,
                             ),
-                            maxLines: 1,
                           ),
                           style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 6,
+                              vertical: 0,
+                            ),
+                            minimumSize: Size.zero, // 🔥 PENTING
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            visualDensity: VisualDensity.compact,
                             backgroundColor: AppColors.softWood,
-                            foregroundColor: AppColors.pureWhite,
                             elevation: 0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
-                            ),
-                            textStyle: GoogleFonts.inter(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
+                  const Gap(8),
                 ],
               ),
             ),

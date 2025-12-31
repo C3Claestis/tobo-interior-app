@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../theme/appcolor.dart';
 
 class NavBar extends StatelessWidget {
@@ -68,7 +69,7 @@ class NavBar extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 12, left: 8, right: 8),
             child: Text(
               label,
-              style: TextStyle(
+              style: GoogleFonts.inter(
                 fontSize: 10,
                 color: isActive ? AppColors.softWood : AppColors.black,
                 fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
