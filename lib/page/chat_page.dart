@@ -157,11 +157,12 @@ class ChatPage extends StatelessWidget {
           tapTargetSize:
               MaterialTapTargetSize.shrinkWrap, // ✅ cegah area klik default
           visualDensity: VisualDensity.compact, // ✅ rapatkan layout
-          backgroundColor: AppColors.softWood,
+          backgroundColor: AppColors.pureWhite,
+          side: BorderSide(color: AppColors.softWood, width: 1)
         ),
         icon: SvgPicture.asset(
           path,
-          color: AppColors.pureWhite,
+          color: AppColors.softWood,
           width: 12,
           height: 10,
         ),
@@ -170,7 +171,7 @@ class ChatPage extends StatelessWidget {
           style: GoogleFonts.inter(
             fontSize: 10,
             fontWeight: FontWeight.w600,
-            color: AppColors.pureWhite,
+            color: AppColors.softWood,
           ),
         ),
       ),

@@ -38,20 +38,22 @@ class ProyekCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // ================= IMAGE =================
-              ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                child: Image.asset(
-                  item.imageUrl,
-                  height: 93,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                  child: Image.asset(
+                    item.imageUrl,
+                    height: 93,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
           
               // ================= CONTENT =================
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 8,
+                padding: const EdgeInsets.only( 
+                  top: 8,                 
                   left: 10,
                   right: 10,
                   bottom: 5,
@@ -65,7 +67,7 @@ class ProyekCardWidget extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.inter(
                         fontSize: 10,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),                                
                   ],

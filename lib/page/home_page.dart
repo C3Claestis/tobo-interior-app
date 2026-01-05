@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
           label: Text(
             "Chat Via Whatsapp",
             style: GoogleFonts.inter(
-              fontSize: 10,
+              fontSize: 12,
               fontWeight: FontWeight.w600,
               color: AppColors.pureWhite,
             ),

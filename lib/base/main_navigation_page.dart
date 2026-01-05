@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:tobo_apk/main.dart';
-import 'package:tobo_apk/page/chat_page.dart';
-import 'package:tobo_apk/page/jasa_page.dart';
-import 'package:tobo_apk/page/katalog_page.dart';
-import 'package:tobo_apk/page/proyek_page.dart';
-import 'package:tobo_apk/provider/whatsapp_provider.dart';
-import 'package:tobo_apk/theme/appcolor.dart';
+import '../main.dart';
+import '../page/chat_page.dart';
+import '../page/jasa_page.dart';
+import '../page/katalog_page.dart';
+import '../page/proyek_page.dart';
+import '../provider/whatsapp_provider.dart';
+import '../theme/appcolor.dart';
 import '../provider/main_navigation_prov.dart';
 import '../page/home_page.dart';
 import '../widget/bottom_navbar_widget.dart';
@@ -27,7 +27,7 @@ class MainNavigationPage extends StatelessWidget {
       appBar: _buildAppBar(navProv.currentIndex, context),
       body: _buildBody(navProv.currentIndex),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 73),
+        padding: const EdgeInsets.only(bottom: 100, right: 16),
         child: Consumer<WhatsAppProvider>(
           builder: (context, value, _) => Material(
             color: Colors.transparent,

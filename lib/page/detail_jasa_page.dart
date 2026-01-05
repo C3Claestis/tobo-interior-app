@@ -61,7 +61,6 @@ class DetailJasaPage extends StatelessWidget {
           child: Stack(
             children: [
               Stack(children: [_bgImg(), _header(context)]),
-
               Container(
                 margin: EdgeInsets.only(top: 250 - (height * 0.12)),
                 child: Container(
@@ -128,7 +127,7 @@ class DetailJasaPage extends StatelessWidget {
                           }),
                         ),
                         const Gap(20),
-                        SizedBox(                          
+                        SizedBox(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -161,34 +160,47 @@ class DetailJasaPage extends StatelessWidget {
 
   Expanded _buttons(String name, String path, bool wa) {
     return Expanded(
-      child: TextButton.icon(
-        onPressed: () {},
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(
-            (wa) ? AppColors.softWood : AppColors.pureWhite,
-          ),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
+      child: SizedBox(
+        height: 30,
+        child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            backgroundColor: wa ? AppColors.softWood : AppColors.pureWhite,
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
               side: BorderSide(
-                color: (wa) ? Colors.transparent : AppColors.black,
-                width: (wa) ? 0 : 1,
+                color: wa ? Colors.transparent : AppColors.black,
+                width: wa ? 0 : 1,
               ),
             ),
           ),
-        ),
-        icon: SvgPicture.asset(
-          path,
-          color: (wa) ? AppColors.pureWhite : AppColors.black,
-          width: 12,
-          height: 10,
-        ),
-        label: Text(
-          name,
-          style: GoogleFonts.inter(
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
-            color: (wa) ? AppColors.pureWhite : AppColors.black,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                path,
+                width: 12,
+                height: 10,
+                colorFilter: ColorFilter.mode(
+                  wa ? AppColors.pureWhite : AppColors.black,
+                  BlendMode.srcIn,
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                name,
+                style: GoogleFonts.inter(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  height: 1, // 🔑 biar sejajar icon
+                  color: wa ? AppColors.pureWhite : AppColors.black,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -234,54 +246,51 @@ class DetailJasaPage extends StatelessWidget {
 
   Padding _header(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50),
+      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: SizedBox(
-              width: double.infinity,
-              height: 32,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.softWood.withOpacity(.6),
-                    ),
-                    child: Center(
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        icon: SvgPicture.asset(
-                          'assets/svgs/arrowLeft.svg',
-                          width: 24,
-                          height: 24,
-                        ),
+          SizedBox(
+            width: double.infinity,
+            height: 32,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.softWood.withOpacity(.6),
+                  ),
+                  child: Center(
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                      icon: SvgPicture.asset(
+                        'assets/svgs/arrowLeft.svg',
+                        width: 24,
+                        height: 24,
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      "Detail Jasa",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.pureWhite,
-                      ),
+                ),
+                Expanded(
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    "Detail Jasa",
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.pureWhite,
                     ),
                   ),
+                ),
 
-                  // ================= DUMMY (PENYEIMBANG) =================
-                  const SizedBox(width: 40, height: 40),
-                ],
-              ),
+                // ================= DUMMY (PENYEIMBANG) =================
+                const SizedBox(width: 40, height: 40),
+              ],
             ),
           ),
         ],

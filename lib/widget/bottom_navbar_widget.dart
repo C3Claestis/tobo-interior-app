@@ -21,15 +21,15 @@ class NavBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 12),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
-        ),
+        // borderRadius: BorderRadius.only(
+        //   topLeft: Radius.circular(16),
+        //   topRight: Radius.circular(16),
+        // ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            blurRadius: 12,
-            offset: Offset(0, -3),
+            color: Colors.black.withOpacity(0.75),
+            blurRadius: 6,
+            offset: Offset(0, 0),
           ),
         ],
       ),

@@ -81,25 +81,37 @@ class DetailProductPage extends StatelessWidget {
       alignment: Alignment.center,
       child: SizedBox(
         height: 30,
-        width: 186,
-        child: TextButton.icon(
+        child: TextButton(
           onPressed: () {},
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(AppColors.softWood),
+          style: TextButton.styleFrom(
+            backgroundColor: AppColors.softWood,
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
-          icon: SvgPicture.asset(
-            'assets/svgs/wa.svg',
-            color: AppColors.pureWhite,
-            width: 12,
-            height: 10,
-          ),
-          label: Text(
-            'Pesan via WhatsApp',
-            style: GoogleFonts.inter(
-              fontSize: 10,
-              fontWeight: FontWeight.w600,
-              color: AppColors.pureWhite,
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                'assets/svgs/wa.svg',
+                width: 12,
+                height: 10,
+                colorFilter: const ColorFilter.mode(
+                  AppColors.pureWhite,
+                  BlendMode.srcIn,
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'Pesan via WhatsApp',
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  height: 1,
+                  color: AppColors.pureWhite,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -157,7 +169,10 @@ class DetailProductPage extends StatelessWidget {
   Widget _teksSpekProduk(String text, Color colors) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Text(text, style: GoogleFonts.poppins(fontSize: 12, color: colors)),
+      child: Text(
+        text,
+        style: GoogleFonts.poppins(fontSize: 12, color: colors),
+      ),
     );
   }
 
@@ -197,54 +212,51 @@ class DetailProductPage extends StatelessWidget {
 
   Padding _header(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50),
+      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: SizedBox(
-              width: double.infinity,
-              height: 32,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.softWood.withOpacity(.6),
-                    ),
-                    child: Center(
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        icon: SvgPicture.asset(
-                          'assets/svgs/arrowLeft.svg',
-                          width: 24,
-                          height: 24,
-                        ),
+          SizedBox(
+            width: double.infinity,
+            height: 32,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.softWood.withOpacity(.6),
+                  ),
+                  child: Center(
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                      icon: SvgPicture.asset(
+                        'assets/svgs/arrowLeft.svg',
+                        width: 24,
+                        height: 24,
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      "Detail Produk",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.pureWhite,
-                      ),
+                ),
+                Expanded(
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    "Detail Produk",
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.pureWhite,
                     ),
                   ),
+                ),
 
-                  // ================= DUMMY (PENYEIMBANG) =================
-                  const SizedBox(width: 40, height: 40),
-                ],
-              ),
+                // ================= DUMMY (PENYEIMBANG) =================
+                const SizedBox(width: 40, height: 40),
+              ],
             ),
           ),
         ],

@@ -46,25 +46,37 @@ class DetailProyekPage extends StatelessWidget {
       alignment: Alignment.center,
       child: SizedBox(
         height: 30,
-        width: 186,
-        child: TextButton.icon(
+        child: TextButton(
           onPressed: () {},
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(AppColors.softWood),
+          style: TextButton.styleFrom(
+            backgroundColor: AppColors.softWood,
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
-          icon: SvgPicture.asset(
-            'assets/svgs/wa.svg',
-            color: AppColors.pureWhite,
-            width: 12,
-            height: 10,
-          ),
-          label: Text(
-            'Konsultasi Proyek Serupa',
-            style: GoogleFonts.inter(
-              fontSize: 10,
-              fontWeight: FontWeight.w600,
-              color: AppColors.pureWhite,
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                'assets/svgs/wa.svg',
+                width: 12,
+                height: 10,
+                colorFilter: const ColorFilter.mode(
+                  AppColors.pureWhite,
+                  BlendMode.srcIn,
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'Konsultasi Proyek Serupa',
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  height: 1,
+                  color: AppColors.pureWhite,
+                ),
+              ),
+            ],
           ),
         ),
       ),
