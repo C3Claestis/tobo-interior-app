@@ -18,7 +18,11 @@ class ProfilePage extends StatelessWidget {
         elevation: 0,
         title: Text(
           'Profile',
-          style: GoogleFonts.poppins(fontSize: 18, color: AppColors.black),
+          style: GoogleFonts.poppins(
+            fontSize: 18,
+            color: AppColors.black,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
       body: Container(

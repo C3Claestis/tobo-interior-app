@@ -111,7 +111,7 @@ class MainNavigationPage extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () =>
-                          Navigator.pushNamed(context, AppRoutes.profilePage),
+                          Navigator.pushNamed(context, AppRoutes.notificationPage),
                       icon: const Icon(Icons.notifications),
                       color: AppColors.black,
                     ),

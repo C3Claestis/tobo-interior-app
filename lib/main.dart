@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:tobo_apk/page/chat_page.dart';
 import 'package:tobo_apk/page/detail_product_page.dart';
 import 'package:tobo_apk/page/detail_proyek_page.dart';
+import 'package:tobo_apk/page/notification_page.dart';
 import 'package:tobo_apk/page/profile_page.dart';
 import 'package:tobo_apk/provider/whatsapp_provider.dart';
 import 'provider/main_navigation_prov.dart';
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
       AppRoutes.detailProyek: (context) => const DetailProyekPage(),
       AppRoutes.chatPage: (context) => const ChatPage(),
       AppRoutes.profilePage: (context) => const ProfilePage(),
+      AppRoutes.notificationPage: (context) => const NotificationPage(),
     },
   );
 }
@@ -78,4 +80,5 @@ class AppRoutes {
   static const detailProyek = '/detailProyek';
   static const chatPage = '/chatPage';
   static const profilePage = '/profilePage';
+  static const notificationPage = '/notificationPage';
 }

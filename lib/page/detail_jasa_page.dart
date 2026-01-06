@@ -191,13 +191,19 @@ class DetailJasaPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 6),
-              Text(
-                name,
-                style: GoogleFonts.inter(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
-                  height: 1, // 🔑 biar sejajar icon
-                  color: wa ? AppColors.pureWhite : AppColors.black,
+              Flexible(
+                child: Text(
+                  name,
+                  maxLines: 2, // boleh 1 atau 2 sesuai kebutuhan
+                  softWrap: true,
+                  overflow: TextOverflow.ellipsis, // opsional
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.inter(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
+                    height: 1.2, // sedikit lebih aman saat wrap
+                    color: wa ? AppColors.pureWhite : AppColors.black,
+                  ),
                 ),
               ),
             ],
