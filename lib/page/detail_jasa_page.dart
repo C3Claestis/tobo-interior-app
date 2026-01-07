@@ -136,7 +136,7 @@ class DetailJasaPage extends StatelessWidget {
                                 "assets/svgs/mintaestimasi.svg",
                                 false,
                               ),
-                              const Gap(20),
+                              const Gap(10),
                               _buttons(
                                 "Konsultasi via WhatsApp",
                                 "assets/svgs/wa.svg",
@@ -161,13 +161,15 @@ class DetailJasaPage extends StatelessWidget {
   Expanded _buttons(String name, String path, bool wa) {
     return Expanded(
       child: SizedBox(
-        height: 30,
-        child: TextButton(
+        height: 30, // samakan dengan ElevatedButton
+        child: ElevatedButton(
           onPressed: () {},
-          style: TextButton.styleFrom(
-            backgroundColor: wa ? AppColors.softWood : AppColors.pureWhite,
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            minimumSize: Size.zero, // 🔥 WAJIB
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            visualDensity: VisualDensity.compact,
+            backgroundColor: wa ? AppColors.softWood : AppColors.pureWhite,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
               side: BorderSide(
@@ -178,32 +180,30 @@ class DetailJasaPage extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.max, // 🔥 jangan min
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SvgPicture.asset(
                 path,
                 width: 12,
-                height: 10,
+                height: 12,
                 colorFilter: ColorFilter.mode(
                   wa ? AppColors.pureWhite : AppColors.black,
                   BlendMode.srcIn,
                 ),
               ),
-              const SizedBox(width: 6),
-              Flexible(
-                child: Text(
-                  name,
-                  maxLines: 2, // boleh 1 atau 2 sesuai kebutuhan
-                  softWrap: true,
-                  overflow: TextOverflow.ellipsis, // opsional
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w600,
-                    height: 1.2, // sedikit lebih aman saat wrap
-                    color: wa ? AppColors.pureWhite : AppColors.black,
-                  ),
+              const Gap(3),
+              Text(
+                name,
+                maxLines: 1, // 🔥 PASTI 1 LINE
+                softWrap: false,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w500,
+                  height: 1, // 🔥 kunci tinggi
+                  color: wa ? AppColors.pureWhite : AppColors.black,
                 ),
               ),
             ],

@@ -9,9 +9,9 @@ class PromoBannerProv extends ChangeNotifier {
   int get currentIndex => _currentIndex;
 
   final List<String> bannerImages = [
-    "assets/images/promo1.png",
-    "assets/images/promo2.png",
-    "assets/images/promo3.png",
+    "assets/images/heroimg.png",
+    "assets/images/heroimg.png",
+    "assets/images/heroimg.png",
   ];
 
   PromoBannerProv() {
