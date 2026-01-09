@@ -61,7 +61,7 @@ class ChatPage extends StatelessWidget {
                 Text(
                   "Senin - Kamis",
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: AppColors.mistGrey,
                   ),
@@ -69,7 +69,7 @@ class ChatPage extends StatelessWidget {
                 Text(
                   "09.00 - 15.00 WIB",
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: AppColors.black,
                   ),
@@ -82,7 +82,7 @@ class ChatPage extends StatelessWidget {
                 Text(
                   "Jumat",
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: AppColors.mistGrey,
                   ),
@@ -90,7 +90,7 @@ class ChatPage extends StatelessWidget {
                 Text(
                   "09.00 - 12.00 WIB",
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: AppColors.black,
                   ),
@@ -111,14 +111,14 @@ class ChatPage extends StatelessWidget {
     ];
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 13),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: SizedBox(
         height: 24, // tinggi tetap
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: items.length,
           // ignore: unnecessary_underscores
-          separatorBuilder: (_, __) => const SizedBox(width: 12),
+          separatorBuilder: (_, __) => const Gap(8),
           itemBuilder: (context, index) {
             final item = items[index];
             return _buttons(item["title"]!, item["icon"]!);
@@ -139,7 +139,7 @@ class ChatPage extends StatelessWidget {
   Text _templateChat() {
     return Text(
       "Template Chat",
-      style: GoogleFonts.poppins(fontSize: 8, color: AppColors.black),
+      style: GoogleFonts.poppins(fontSize: 10, color: AppColors.black),
     );
   }
 

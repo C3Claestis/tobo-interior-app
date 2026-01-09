@@ -8,7 +8,7 @@ class HomeHeroProv extends ChangeNotifier {
   int currentIndex = 0;
   Timer? _timer;
 
-  final double itemWidth = 302; // 290 + spacing
+  final double itemWidth = 331; // 290 + spacing
 
   final List<HeroBannerModel> banners = [
     HeroBannerModel(

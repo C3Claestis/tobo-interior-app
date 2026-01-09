@@ -64,34 +64,36 @@ class HomePage extends StatelessWidget {
             color: AppColors.black,
           ),
         ),
-        const Gap(9),
+        const Gap(8),
         ElevatedButton.icon(
           onPressed: () {},
           icon: SvgPicture.asset(
             'assets/svgs/wa.svg',
             width: 12,
             height: 12,
-            color: AppColors.pureWhite,
+            color: AppColors.softWood,
           ),
           label: Text(
             "Chat Via Whatsapp",
             style: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.w600,
-              color: AppColors.pureWhite,
+              color: AppColors.softWood,
             ),
           ),
           style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.softWood,
-            foregroundColor: AppColors.pureWhite,
-            minimumSize: const Size(0, 24), // 🔥 height 24
+            backgroundColor: AppColors.pureWhite,
+            foregroundColor: AppColors.softWood,
+            minimumSize: const Size(155, 30), // 🔥 height 30
             padding: const EdgeInsets.symmetric(
               horizontal: 8,
             ), // kecilkan padding
+            elevation: 0,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
             ),
+            side: BorderSide(color: AppColors.softWood),
           ),
         ),
       ],

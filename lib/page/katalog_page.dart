@@ -21,10 +21,10 @@ class KatalogPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(            
+          SizedBox(
             height: 24,
             child: ListView.separated(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.only(left: 16),
               scrollDirection: Axis.horizontal,
               itemCount: categories.length,
               separatorBuilder: (_, _) => const Gap(8),
@@ -55,7 +55,7 @@ class KatalogPage extends StatelessWidget {
                     maxCrossAxisExtent: 200, // max lebar 1 item
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 0.85, // rasio fleksibel
+                    childAspectRatio: 160/203, // rasio fleksibel
                   ),
                   itemBuilder: (context, index) {
                     final item = items[index];
@@ -116,7 +116,7 @@ class KatalogPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          child: Text(
+          child: Text(            
             title,
             style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w600),
           ),

@@ -21,30 +21,70 @@ class JasaCardWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () => Navigator.pushNamed(context, '/detailJasa'),
         child: SizedBox(
-          height: 215,
           child: Card(
             color: AppColors.pureWhite,
             elevation: 4,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
             child: Stack(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // IMAGE
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(16),
-                      ),
-                      child: Image.asset(
-                        jasa.image,
-                        height: 120,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
+                    Stack(
+                      clipBehavior: Clip.none, // 🔑 WAJIB
+                      children: [
+                        ClipRRect(
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(16),
+                          ),
+                          child: Image.asset(
+                            jasa.image,
+                            height: 120,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: -14, // ← RELATIF KE IMAGE
+                          right: 16,
+                          child: SizedBox(
+                            height: 26,
+                            child: ElevatedButton.icon(
+                              onPressed: onWhatsappTap,
+                              icon: SvgPicture.asset(
+                                'assets/svgs/wa.svg',
+                                width: 12,
+                                height: 10,
+                              ),
+                              label: Text(
+                                'Konsultasi via WhatsApp',
+                                style: GoogleFonts.inter(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.pureWhite,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.softWood,
+                                elevation: 0,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 6,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+
                     Padding(
-                      padding: const EdgeInsets.only(left: 16, top: 16, right: 16, bottom: 12),
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -53,63 +93,19 @@ class JasaCardWidget extends StatelessWidget {
                             style: GoogleFonts.poppins(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: AppColors.black,
                             ),
                           ),
                           Text(
                             jasa.description,
-                            style: GoogleFonts.poppins(
-                              fontSize: 10,                          
-                              color: AppColors.black,                        
-                            ),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.poppins(fontSize: 10),
                           ),
                         ],
                       ),
                     ),
                   ],
-                ),
-                Positioned(
-                  bottom: 75,
-                  right: 16,
-                  child: SizedBox(
-                    width: 158,
-                    height: 24,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: ElevatedButton.icon(
-                        onPressed: onWhatsappTap,
-                        icon: SvgPicture.asset(
-                          'assets/svgs/wa.svg',
-                          width: 12,
-                          height: 12,
-                        ),
-                        label: Text(
-                          'Konsultasi via WhatsApp',
-                          style: GoogleFonts.inter(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.pureWhite,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.softWood,
-                          elevation: 0,
-                          minimumSize: const Size(0, 0),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                ),                
               ],
             ),
           ),

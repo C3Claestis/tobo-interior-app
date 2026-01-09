@@ -58,7 +58,7 @@ class KatalogCardWidget extends StatelessWidget {
                 top: 8,
                 left: 10,
                 right: 10,
-                bottom: 5,
+                bottom: 8,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,62 +69,61 @@ class KatalogCardWidget extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.inter(
-                      fontSize: 10,
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const Gap(4),
-
-                  Text(
-                    "${rupiah(item.priceMinimum)} - ${rupiah(item.priceMaximum)}",
-                    style: GoogleFonts.inter(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.softWood,
+                  const Gap(8),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "${rupiah(item.priceMinimum)} - ${rupiah(item.priceMaximum)}",
+                      style: GoogleFonts.inter(
+                        height: 1 / 15,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.softWood,
+                        letterSpacing: 0,
+                      ),
                     ),
                   ),
-                  const Gap(5),
+                  const Gap(12),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: 69,
-                        height: 24,
-                        child: ElevatedButton.icon(
-                          onPressed: onPesanTap,
-                          icon: SvgPicture.asset(
-                            'assets/svgs/wa.svg',
-                            height: 10,
-                            width: 12,
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: SizedBox(
+                      width: 69,
+                      height: 24,
+                      child: ElevatedButton.icon(
+                        onPressed: onPesanTap,
+                        icon: SvgPicture.asset(
+                          'assets/svgs/wa.svg',
+                          height: 10,
+                          width: 12,
+                        ),
+                        label: Text(
+                          "Pesan",
+                          style: GoogleFonts.inter(
+                            fontSize: 10,
+                            color: AppColors.pureWhite,
+                            fontWeight: FontWeight.w600,
                           ),
-                          label: Text(
-                            "Pesan",
-                            style: GoogleFonts.inter(
-                              fontSize: 10,
-                              color: AppColors.pureWhite,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 6,
-                              vertical: 0,
-                            ),
-                            minimumSize: Size.zero, // 🔥 PENTING
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            visualDensity: VisualDensity.compact,
-                            backgroundColor: AppColors.softWood,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 6),
+                          minimumSize: Size.zero, // 🔥 PENTING
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          visualDensity: VisualDensity.compact,
+                          backgroundColor: AppColors.softWood,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                  const Gap(8),
                 ],
               ),
             ),

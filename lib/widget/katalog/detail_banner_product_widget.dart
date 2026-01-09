@@ -14,7 +14,7 @@ class DetailBannerProductWidget extends StatelessWidget {
       builder: (_, prov, _) {
         return SizedBox(
           width: double.infinity,
-          height: 280,
+          height: 270 + MediaQuery.of(context).padding.top,
           child: Stack(
             children: [
               // ===========================

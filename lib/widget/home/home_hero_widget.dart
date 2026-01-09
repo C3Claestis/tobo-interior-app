@@ -29,8 +29,8 @@ class HomeHeroWidget extends StatelessWidget {
   }
 
   SizedBox _heroBanner(BuildContext context, HomeHeroProv prov) {
-    return SizedBox(
-      height: 180,
+    return SizedBox(      
+      height: 187,
       width: double.infinity,
       child: NotificationListener<ScrollNotification>(
         onNotification: (_) {
@@ -50,15 +50,17 @@ class HomeHeroWidget extends StatelessWidget {
             final banner = prov.banners[index];
 
             return SizedBox(
-              width: 290,
-              height: 160,
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  _backgroundImage(banner.image),
-                  _gradientOverlay(),
-                  _content(context, prov, banner, index),
-                ],
+              width: 319,              
+              child: AspectRatio(
+                aspectRatio: 3 / 4,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    _backgroundImage(banner.image),
+                    _gradientOverlay(),
+                    _content(context, prov, banner, index),
+                  ],
+                ),
               ),
             );
           },
@@ -100,9 +102,9 @@ class HomeHeroWidget extends StatelessWidget {
 
   Widget _content(BuildContext context, HomeHeroProv prov, banner, int index) {
     return Positioned(
-      bottom: 16,
-      left: 16,
-      right: 16,
+      bottom: 12,
+      left: 12,
+      right: 18,      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -114,6 +116,7 @@ class HomeHeroWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          const Gap(4),
           Text(
             banner.description,
             style: GoogleFonts.inter(
@@ -122,9 +125,9 @@ class HomeHeroWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 7),
+          const Gap(8),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               _actionButton(
                 context,
@@ -133,6 +136,7 @@ class HomeHeroWidget extends StatelessWidget {
                 text: banner.buttonTextLeft,
                 onTap: () => context.read<HomeHeroProv>().onBannerTap(index),
               ),
+              const Gap(12),
               _actionButton(
                 context,
                 position: 'right',
@@ -155,7 +159,7 @@ class HomeHeroWidget extends StatelessWidget {
     required VoidCallback onTap,
   }) {
     return SizedBox(
-      height: 24,
+      height: 26,
       width: 126,
       child: ElevatedButton.icon(
         onPressed: onTap,

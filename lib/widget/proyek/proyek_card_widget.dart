@@ -31,50 +31,50 @@ class ProyekCardWidget extends StatelessWidget {
             ),
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // ================= IMAGE =================
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                  child: Image.asset(
-                    item.imageUrl,
-                    height: 93,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // ================= IMAGE =================
+            Expanded(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(16),
+                ),
+                child: Image.asset(
+                  item.imageUrl,
+                  height: 93,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+
+            // ================= CONTENT =================
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 8,
+                left: 10,
+                right: 10,
+                bottom: 6,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: GoogleFonts.inter(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.black,
+                    ),
                   ),
-                ),
+                ],
               ),
-          
-              // ================= CONTENT =================
-              Padding(
-                padding: const EdgeInsets.only( 
-                  top: 8,                 
-                  left: 10,
-                  right: 10,
-                  bottom: 5,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      item.description,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),                                
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

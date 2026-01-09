@@ -22,15 +22,7 @@ class NotificationCardWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 3),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            //boxShadow: [
-            //   BoxShadow(
-            //     color: Colors.grey.withOpacity(0.2),
-            //     spreadRadius: 1,
-            //     blurRadius: 5,
-            //     offset: const Offset(0, 3),
-            //   ),
-            // ],
+            borderRadius: BorderRadius.circular(10),          
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,8 +30,8 @@ class NotificationCardWidget extends StatelessWidget {
               // ===== ICON =====
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.warmBeige,
-                  borderRadius: BorderRadius.circular(25),
+                  color: AppColors.warmBeige,                  
+                  shape: BoxShape.circle
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),

@@ -50,19 +50,20 @@ class DetailJasaPage extends StatelessWidget {
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
-        statusBarColor: Colors.white, // BAR PUTIH
+        statusBarColor: Colors.transparent, // BAR PUTIH
         statusBarIconBrightness: Brightness.light, // ICON HITAM (Android)
         statusBarBrightness: Brightness.light, // iOS
       ),
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         backgroundColor: AppColors.pureWhite,
         body: SingleChildScrollView(
           // tambah sesuai konten
           child: Stack(
             children: [
-              Stack(children: [_bgImg(), _header(context)]),
+              Stack(children: [_bgImg(context), _header(context)]),
               Container(
-                margin: EdgeInsets.only(top: 250 - (height * 0.12)),
+                margin: EdgeInsets.only(top: 300 - (height * 0.12)),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
@@ -126,7 +127,7 @@ class DetailJasaPage extends StatelessWidget {
                             );
                           }),
                         ),
-                        const Gap(20),
+                        const Gap(4),
                         SizedBox(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,15 +138,17 @@ class DetailJasaPage extends StatelessWidget {
                                 false,
                               ),
                               const Gap(10),
-                              _buttons(
-                                "Konsultasi via WhatsApp",
-                                "assets/svgs/wa.svg",
-                                true,
+                              Expanded(
+                                child: _buttons(
+                                  "Konsultasi via WhatsApp",
+                                  "assets/svgs/wa.svg",
+                                  true,
+                                ),
                               ),
                             ],
                           ),
                         ),
-                        const Gap(30),
+                        const Gap(5),
                       ],
                     ),
                   ),
@@ -158,56 +161,56 @@ class DetailJasaPage extends StatelessWidget {
     );
   }
 
-  Expanded _buttons(String name, String path, bool wa) {
-    return Expanded(
-      child: SizedBox(
-        height: 30, // samakan dengan ElevatedButton
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            minimumSize: Size.zero, // 🔥 WAJIB
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            visualDensity: VisualDensity.compact,
-            backgroundColor: wa ? AppColors.softWood : AppColors.pureWhite,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
-              side: BorderSide(
-                color: wa ? Colors.transparent : AppColors.black,
-                width: wa ? 0 : 1,
-              ),
+  Widget _buttons(String name, String path, bool wa) {
+    return SizedBox(
+      height: 30, // samakan dengan ElevatedButton
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          padding: (wa)
+              ? EdgeInsets.symmetric(horizontal: 8)
+              : EdgeInsets.symmetric(horizontal: 20),
+          minimumSize: Size.zero, // 🔥 WAJIB
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          visualDensity: VisualDensity.compact,
+          backgroundColor: wa ? AppColors.softWood : AppColors.pureWhite,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+            side: BorderSide(
+              color: wa ? Colors.transparent : AppColors.black,
+              width: wa ? 0 : 1,
             ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max, // 🔥 jangan min
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                path,
-                width: 12,
-                height: 12,
-                colorFilter: ColorFilter.mode(
-                  wa ? AppColors.pureWhite : AppColors.black,
-                  BlendMode.srcIn,
-                ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max, // 🔥 jangan min
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              path,
+              width: 12,
+              height: 12,
+              colorFilter: ColorFilter.mode(
+                wa ? AppColors.pureWhite : AppColors.black,
+                BlendMode.srcIn,
               ),
-              const Gap(3),
-              Text(
-                name,
-                maxLines: 1, // 🔥 PASTI 1 LINE
-                softWrap: false,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                  height: 1, // 🔥 kunci tinggi
-                  color: wa ? AppColors.pureWhite : AppColors.black,
-                ),
+            ),
+            const Gap(3),
+            Text(
+              name,
+              maxLines: 1, // 🔥 PASTI 1 LINE
+              softWrap: false,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.inter(
+                fontSize: 10,
+                fontWeight: FontWeight.w500,
+                height: 1, // 🔥 kunci tinggi
+                color: wa ? AppColors.pureWhite : AppColors.black,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -242,17 +245,24 @@ class DetailJasaPage extends StatelessWidget {
     );
   }
 
-  SizedBox _bgImg() {
+  SizedBox _bgImg(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 269,
+      height: 269 + MediaQuery.of(context).padding.top,
       child: Image.asset('assets/images/HERO.png', fit: BoxFit.cover),
     );
   }
 
   Padding _header(BuildContext context) {
+    final topPadding = MediaQuery.of(context).padding.top;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+      padding: EdgeInsets.fromLTRB(
+        15,
+        topPadding + 10, // 🔥 aman dari status bar
+        15,
+        10,
+      ),
       child: Column(
         children: [
           SizedBox(
@@ -339,7 +349,7 @@ class DetailJasaPage extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 20),
+          const Gap(20),
 
           // RIGHT CARD
           Expanded(
@@ -350,8 +360,9 @@ class DetailJasaPage extends StatelessWidget {
               ),
               margin: const EdgeInsets.only(bottom: 16),
               decoration: BoxDecoration(
-                color: const Color(0xFFD9B07A),
+                color: AppColors.pureWhite,
                 borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: AppColors.softWood, width: 2),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -360,7 +371,8 @@ class DetailJasaPage extends StatelessWidget {
                     step,
                     style: GoogleFonts.inter(
                       fontSize: 10,
-                      color: AppColors.pureWhite,
+                      color: Color(0xFFAFADAD),
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Text(
@@ -368,7 +380,7 @@ class DetailJasaPage extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.pureWhite,
+                      color: AppColors.black,
                     ),
                   ),
                 ],
