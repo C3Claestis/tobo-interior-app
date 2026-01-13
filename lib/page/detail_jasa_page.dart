@@ -73,84 +73,85 @@ class DetailJasaPage extends StatelessWidget {
                     color: AppColors.pureWhite,
                   ),
                   width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(25),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Desain Interior",
-                          style: GoogleFonts.inter(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.black,
-                          ),
-                        ),
-                        const Gap(12),
-                        _tittle("Deskripsi"),
-                        const Gap(5),
-                        Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                          style: GoogleFonts.poppins(
-                            fontSize: 12,
-                            color: AppColors.black,
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
-                        const Gap(12),
-                        _tittle("Lingkup Pekerjaan"),
-                        const Gap(5),
-                        Column(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
-                            bulletText("Lorem ipsum dolor sit amet"),
+                            Text(
+                              "Desain Interior",
+                              style: GoogleFonts.inter(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.black,
+                              ),
+                            ),
+                            const Gap(12),
+                            _tittle("Deskripsi"),
+                            const Gap(5),
+                            Text(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                color: AppColors.black,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                            const Gap(12),
+                            _tittle("Lingkup Pekerjaan"),
+                            const Gap(5),
+                            Column(
+                              children: [
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                                bulletText("Lorem ipsum dolor sit amet"),
+                              ],
+                            ),
+                            const Gap(12),
+                            _tittle("Proses Kerja"),
+                            const Gap(12),
+                            Column(
+                              children: List.generate(steps.length, (index) {
+                                final item = steps[index];
+                                return timelineStep(
+                                  step: item.step,
+                                  title: item.title,
+                                  icon: item.icon,
+                                  isLast: index == steps.length - 1,
+                                );
+                              }),
+                            ),                            
                           ],
                         ),
-                        const Gap(12),
-                        _tittle("Proses Kerja"),
-                        const Gap(12),
-                        Column(
-                          children: List.generate(steps.length, (index) {
-                            final item = steps[index];
-                            return timelineStep(
-                              step: item.step,
-                              title: item.title,
-                              icon: item.icon,
-                              isLast: index == steps.length - 1,
-                            );
-                          }),
+                      ),
+                      SizedBox(                        
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            _buttons(
+                              "Minta Estimasi",
+                              "assets/svgs/mintaestimasi.svg",
+                              false,
+                            ),
+                            const Gap(16),
+                            _buttons(
+                              "Konsultasi via WhatsApp",
+                              "assets/svgs/wa.svg",
+                              true,
+                            ),
+                          ],
                         ),
-                        const Gap(4),
-                        SizedBox(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              _buttons(
-                                "Minta Estimasi",
-                                "assets/svgs/mintaestimasi.svg",
-                                false,
-                              ),
-                              const Gap(10),
-                              Expanded(
-                                child: _buttons(
-                                  "Konsultasi via WhatsApp",
-                                  "assets/svgs/wa.svg",
-                                  true,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Gap(5),
-                      ],
-                    ),
+                      ),
+                      const Gap(20),
+                    ],
                   ),
                 ),
               ),
@@ -167,9 +168,7 @@ class DetailJasaPage extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          padding: (wa)
-              ? EdgeInsets.symmetric(horizontal: 8)
-              : EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: Size.zero, // 🔥 WAJIB
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           visualDensity: VisualDensity.compact,
@@ -204,7 +203,7 @@ class DetailJasaPage extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: GoogleFonts.inter(
-                fontSize: 10,
+                fontSize: 13,
                 fontWeight: FontWeight.w500,
                 height: 1, // 🔥 kunci tinggi
                 color: wa ? AppColors.pureWhite : AppColors.black,

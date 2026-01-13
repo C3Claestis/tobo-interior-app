@@ -24,7 +24,7 @@ class KatalogPage extends StatelessWidget {
           SizedBox(
             height: 24,
             child: ListView.separated(
-              padding: const EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               scrollDirection: Axis.horizontal,
               itemCount: categories.length,
               separatorBuilder: (_, _) => const Gap(8),
@@ -70,7 +70,7 @@ class KatalogPage extends StatelessWidget {
     );
   }
 
-  Widget _categoryButton(BuildContext context, String title, int index) {
+ Widget _categoryButton(BuildContext context, String title, int index) {
     // ✅ Gunakan KatalogProvider agar sinkron dengan list produk
     return Consumer<KatalogProvider>(
       builder: (context, prov, _) {
@@ -116,7 +116,7 @@ class KatalogPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          child: Text(            
+          child: Text(
             title,
             style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w600),
           ),

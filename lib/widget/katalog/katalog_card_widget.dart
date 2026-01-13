@@ -70,7 +70,7 @@ class KatalogCardWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.inter(
                       fontSize: 12,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   const Gap(8),
@@ -82,7 +82,7 @@ class KatalogCardWidget extends StatelessWidget {
                       style: GoogleFonts.inter(
                         height: 1 / 15,
                         fontSize: 12,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         color: AppColors.softWood,
                         letterSpacing: 0,
                       ),
