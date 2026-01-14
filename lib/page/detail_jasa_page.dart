@@ -48,6 +48,20 @@ class DetailJasaPage extends StatelessWidget {
       ),
     ];
 
+    bool isTextOverflow({
+      required String text,
+      required TextStyle style,
+      required double maxWidth,
+    }) {
+      final tp = TextPainter(
+        text: TextSpan(text: text, style: style),
+        maxLines: 1,
+        textDirection: TextDirection.ltr,
+      )..layout(maxWidth: maxWidth);
+
+      return tp.didExceedMaxLines;
+    }
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent, // BAR PUTIH
@@ -76,7 +90,11 @@ class DetailJasaPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+                        padding: const EdgeInsets.only(
+                          left: 25,
+                          right: 25,
+                          top: 25,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -128,26 +146,72 @@ class DetailJasaPage extends StatelessWidget {
                                   isLast: index == steps.length - 1,
                                 );
                               }),
-                            ),                            
+                            ),
                           ],
                         ),
                       ),
-                      SizedBox(                        
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _buttons(
-                              "Minta Estimasi",
-                              "assets/svgs/mintaestimasi.svg",
-                              false,
-                            ),
-                            const Gap(16),
-                            _buttons(
-                              "Konsultasi via WhatsApp",
-                              "assets/svgs/wa.svg",
-                              true,
-                            ),
-                          ],
+                      Padding(
+                        padding: const EdgeInsets.only(left: 25, right: 25),
+                        child: SizedBox(
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              final buttonTextStyle = GoogleFonts.inter(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
+                                height: 1,
+                              );
+
+                              final availableWidth =
+                                  (constraints.maxWidth - 16) /
+                                  2; // row: 2 button + gap
+
+                              final isOverflow = isTextOverflow(
+                                text: "Konsultasi via WhatsApp",
+                                style: buttonTextStyle,
+                                maxWidth:
+                                    availableWidth -
+                                    40, // dikurangi icon + padding
+                              );
+
+                              if (isOverflow) {
+                                /// 🔥 MODE COLUMN (Minta Estimasi di atas)
+                                return Column(
+                                  children: [
+                                    _buttons(
+                                      "Minta Estimasi",
+                                      "assets/svgs/mintaestimasi.svg",
+                                      false,
+                                    ),
+                                    const Gap(12),
+                                    _buttons(
+                                      "Konsultasi via WhatsApp",
+                                      "assets/svgs/wa.svg",
+                                      true,
+                                    ),
+                                  ],
+                                );
+                              }
+
+                              /// ✅ MODE ROW NORMAL
+                              return Row(
+                                children: [
+                                  _buttons(
+                                    "Minta Estimasi",
+                                    "assets/svgs/mintaestimasi.svg",
+                                    false,
+                                  ),
+                                  const Gap(16),
+                                  Expanded(
+                                    child: _buttons(
+                                      "Konsultasi via WhatsApp",
+                                      "assets/svgs/wa.svg",
+                                      true,
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
                         ),
                       ),
                       const Gap(20),
